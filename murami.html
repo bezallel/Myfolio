@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="murami.css">
+    <title>Murami Case Study</title>
+</head>
+<body>
+<button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+  <nav class="side-nav">
+  <ul>
+    <li><a href="hero.html">Home</a></li>
+    <li><a href="debit.html">Debit Note</a></li>
+    <li><a href="hotelops.html">Hotel Ops</a></li>
+    <li class="active">
+      <a href="murami.html">Murami</a>
+      <ul class="sub-nav">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#case-study">Case Study</a></li>
+      </ul>
+    </li>
+    <li><a href="esg.html">ESG/INT TRADE</a></li>
+    <li><a href="allpyth.html">Python/SQL Notebooks</a></li>
+    <!-- <li><a href="project4.html">Super Store</a></li> -->
+  </ul>
+</nav>
+
+
+
+     <main>
+    <section id="overview" class="project-overview">
+    <h2>Murami – Rent Estimator ML App </h2>
+
+    <ul class="project-meta">
+      <li><strong>Category:</strong> Predictive modeling / analytical deployment</li>
+      <li><strong>Technical Skills:</strong> Python, ML modeling, HTML/CSS/JS deployment, data preprocessing</li>
+    </ul>
+
+    <div class="project-description">
+      <p><strong>Overview:</strong> Developed a machine learning model predicting rent prices based on amenities, deployed as an interactive web app.</p>
+      <p><strong>Impact:</strong>  Enable renters to quickly obtain data-driven rent estimates, saving time and improving decision-making while promoting market transparency. </p>
+    </div>
+
+  <video autoplay muted loop class="app-video">
+    <source src="./Videos//amurami.mp4" type="video/mp4">
+  </video>
+
+  <a href="https://murami-9zko.onrender.com" target="_blank" class="visit-btn">
+    Visit Murami Demo
+  </a>
+</section>
+
+    <!-- Case Study Section -->
+<section id="case-study" class="project-case-study">
+    <div class="sticky-container">
+    
+    <div class="sticky-explanation">
+      <h1 class="case-title">Project Case Study</h1>
+      <h2 id="case-heading" class="fade show">Turning Overcharges into Savings</h2>
+      <p id="case-text" class="fade show">
+        While reviewing supplier invoices against MOUs, I uncovered systematic
+        overcharges. Planned values (green) vs. actual charges (red) highlighted
+        financial leakage often overlooked in daily operations.
+      </p>
+    </div>
+
+    <!-- Scrollable images -->
+    <div class="sticky-scroll">
+      <div class="scroll-item" data-heading="Problem"
+           data-text="Finding an apartment is time-consuming, with rent prices varying widely across similar neighborhoods and amenities. Renters lack a transparent, data-driven way to judge whether a listing is fairly priced.">
+        <img src="./Images/astrent.png" alt="Dataset discrepancies">
+      </div>
+
+      <div class="scroll-item" data-heading="Solution / Approach"
+           data-text="To address this, I developed a machine learning model that predicts rent prices based on apartment features such as Location, Bedrooms, Parking Etc. The model was trained on real market data and deployed as an interactive web app where users input features and receive instant rent estimates.">
+        <img src="./Images/amumockup.png" alt="Leakage vs Savings">
+      </div>
+
+      <div class="scroll-item" 
+        data-heading="Process"
+        data-text="The pipeline:<br>1. User enters listing details<br> 2. Model processes features<br>3. Rent estimate is generated instantly">
+        <img src="./Images/aaflow1.png" alt="Flow chart of model">
+      </div>
+
+
+      <div class="scroll-item" data-heading="Under The Hood"
+           data-text="Behind the interface, the engine is a Python-based machine learning model. Trained on thousands of real rental listings, it learns how factors like location, parking, bedrooms Etc. The code builds a pipeline that cleans data, selects features, and outputs reliable rent predictions.">
+        <img src="./Images/amurapythinput.png" alt="App Homepage">
+      </div>
+    </div>
+    </div>
+
+      
+  <div class="next-project hidden">
+        <a href="./esg.html">Go to ESG/Trade →</a>
+  </div>
+
+
+  <div class="scroll-item impact" data-heading=""
+           data-text="">
+        <div class="impact-metrics">
+          <h2>Results & Impact</h2>
+          <div class="metric"><span>Prediction Accuracy / Reliability</span> <br>Predicted rent values were within ±10% of actual historical rents across 200 test properties</div>
+          <div class="metric"><span>User Efficiency / Time Saved</span> <br> Users can estimate rent in under 30 seconds instead of manually researching multiple listings</div>
+        </div>
+      </div>
+</section>
+</main>
+
+<footer class="footer">
+    <p>&copy; All Rights Reserved 2024 | Designed by Peace Edogun</p>
+</footer>
+
+    <script src="murami.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    
+</body>
+</html>

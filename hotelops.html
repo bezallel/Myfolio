@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hotelops.css">
+    <title>Hotel Ops Case Study</title>
+</head>
+<body>
+  <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+    <nav class="side-nav">
+  <ul>
+    <li><a href="hero.html">Home</a></li>
+    <li><a href="debit.html">Debit Note</a></li>
+    <li class="active">
+      <a href="hotelops.html">Hotel Ops</a>
+      <ul class="sub-nav">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#case-study">Case Study</a></li>
+      </ul>
+    </li>
+    <li><a href="murami.html">Murami</a></li>
+    <li><a href="esg.html">ESG/INT TRADE</a></li>
+    <li><a href="allpyth.html">Python/SQL Notebooks</a></li>
+    <!-- <li><a href="project4.html">Super Store</a></li> -->
+  </ul>
+</nav>
+
+
+
+     <main>
+    <section id="overview" class="project-overview">
+    <h2>Hotel Ops – Guest Cancellation Prediction Dashboard</h2>
+
+    <ul class="project-meta">
+      <li><strong>Category:</strong> Predictive operations / resource optimization</li>
+      <li><strong>Technical Skills:</strong> Python, ML, HTML/CSS/JS dashboard, risk scoring</li>
+    </ul>
+
+    <div class="project-description">
+      <p><strong>Overview:</strong> Built an ML-powered dashboard to predict guest cancellations, enables proactive resource allocation and reducing operational risk in hotel management.</p>
+      <p><strong>Impact:</strong> Enables hotel staff to identify high-risk bookings at a glance, reducing last-minute cancellations and improving operational efficiency.</p>
+    </div>
+
+  <video autoplay muted loop class="app-video">
+    <source src="./Videos//ahodasbod.mp4" type="video/mp4">
+  </video>
+
+  <a href="https://hotel-ops.onrender.com" target="_blank" class="visit-btn">
+    Visit Hotel Ops Demo
+  </a>
+</section>
+
+    <!-- Case Study Section -->
+<section id="case-study" class="project-case-study">
+    <div class="sticky-container">
+  
+      
+    <div class="sticky-explanation">
+      <h1 class="case-title">Project Case Study</h1>
+      <h2 id="case-heading" class="fade show">Turning Overcharges into Savings</h2>
+      <p id="case-text" class="fade show">
+        While reviewing supplier invoices against MOUs, I uncovered systematic
+        overcharges. Planned values (green) vs. actual charges (red) highlighted
+        financial leakage often overlooked in daily operations.
+      </p>
+    </div>
+
+
+    
+<!-- Scrollable images -->
+    <div class="sticky-scroll">
+      <div class="scroll-item" data-heading="Problem"
+           data-text="Last-minute guest cancellations create major challenges in hotel operations—unused rooms, wasted staff time, and lost revenue. Without early warning, managers are forced into reactive decisions.">
+        <img src="./Images/ahodadraph.jpeg" alt="Dataset discrepancies">
+      </div>
+
+      <div class="scroll-item" data-heading="Solution / Approach"
+           data-text="I built a machine learning dashboard that predicts which bookings are most likely to cancel. Managers can see risk scores in real time and take preventive action before revenue is lost.">
+        <!-- <img src="./Images/amumockup.png" alt="Leakage vs Savings"> -->
+         <video autoplay muted loop class="appy-video">
+          <source src="./Videos//ahodashhh.mp4" type="video/mp4">
+         </video>
+      </div>
+
+      <div class="scroll-item" 
+        data-heading="Process"
+        data-text="TThe system analyzes booking data like lead time, seasonality, and guest history—to spot patterns linked with cancellations. Predictions are displayed directly in the dashboard for immediate decision support.">
+        <img src="./Images/ahodaflow2.png" alt="Flow chart of model">
+      </div>
+
+
+      <div class="scroll-item" data-heading="Under The Hood"
+           data-text="The dashboard is a Python-based ML pipeline trained on historical hotel data using Random Forest Classifier. It preprocesses bookings, selects key features, and applies classification models to estimate cancellation risk. The pipeline is modular and can adapt to new data over time.">
+        <img src="./Images/ahodashmodel.png" alt="App Homepage">
+      </div>
+    </div>
+    </div>
+
+      
+  <div class="next-project hidden">
+        <a href="./murami.html">Go to Murami →</a>
+  </div>
+
+
+  <div class="scroll-item impact" data-heading=""
+           data-text="">
+        <div class="impact-metrics">
+          <h2>Results & Impact</h2>
+          <div class="metric"><span>Prediction Accuracy / Reliability</span> <br>predicted ~85% of cancellations on historical booking data, demonstrating robust reliability.</div>
+          <div class="metric"><span>Operational Efficiency</span> <br> Reduced wasted room inventory and streamlines the check-in process by flagging high-risk cancellations early.</div>
+          <div class="metric"><span>Revenue Protection</span> <br> Proactive cancellation prediction would help hotels recover otherwise lost bookings, potentially boosting occupancy rates and reducing leakage.</div>
+          <div class="metric"><span>Time Savings for Staff</span> <br> By automating guest follow-ups and alerts, the system could save front desk staff 20–30% of time usually spent managing last-minute cancellations.</div>
+        </div>
+      </div>
+</section>
+</main>
+
+
+<footer class="footer">
+    <p>&copy; All Rights Reserved 2024 | Designed by Peace Edogun</p>
+</footer>
+
+    <script src="hotelops.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    
+</body>
+</html>
