@@ -170,6 +170,15 @@ h1, h2 {
     background: #ff1f70;
 }
 
+.visit-btn + .demo-note {
+  display: inline-block;       /* keeps it tied to the button but wraps if needed */
+  margin-left: 0.1rem;
+  font-size: 0.9rem;
+  color: #ff0000;
+  font-weight: 600;
+  vertical-align: middle;      /* aligns vertically with button */
+}
+
 
 
 
