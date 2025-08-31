@@ -421,18 +421,11 @@ main {
 @media (max-width: 767px) {
 
 
-   /* .menu-toggle {
-  font-size: 5vw;     
-  padding: 0.2em 0.4em;
-  display: block;
-} */
-
-
-
-
 .menu-toggle { 
   display:block !important; 
   position:fixed; 
+  font-size: 5vw;
+  padding: 0.2em 0.4em;
   top:1rem; 
   left:1rem; 
   z-index:5000; 
@@ -475,7 +468,6 @@ main {
     display: none; 
   }
 
-
   /* ensure normal document flow and stacking */
   .sticky-container { display: block; }
   .sticky-scroll { display: block; }
@@ -506,9 +498,6 @@ main {
   font-size: clamp(1.4rem, 5vw, 1.9rem); /* scales nicely on phones */
   line-height: 1.3;
 }
-
-
-
   .scroll-item .mobile-text {
     margin: 0 0 0.75rem;
     text-align: center;
@@ -540,22 +529,14 @@ main {
     margin-left: 0;
   }
 
-  /* .next-project {
-    bottom: 3rem;   
-    right: 1rem;     
-    opacity: 1;
-    pointer-events: auto;
-  }
+  .impact-metrics .metric span {
+   font-size: clamp(1.4rem, 5vw, 1.9rem); 
+}
+.impact-metrics .metric {
+  font-size: 0.95rem;
+}
 
-  .next-project a {
-    font-size: clamp(0.75rem, 3vw, 1rem); 
-    padding: 0.7em 1em;  
-    border-radius: 999px;
-  } */
-
-
-
-    .next-project {
+  .next-project {
     bottom: 3rem;
     right: 1rem;
   }
@@ -565,14 +546,6 @@ main {
     padding: 0.7em 1em;
     border-radius: 999px;
   }
-
-
-
-
-
-
-
-
 
  .footer {
     display: flex;
