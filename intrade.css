@@ -5,17 +5,16 @@
 
 :root{
   --sidebar-width: 200px;
-  --sidebar-gap: 20px; /* extra gap between sidebar and content */
+  --sidebar-gap: 20px; 
 }
 
-/* Base / body */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden; /* prevent horizontal scroll/zoom */
-  -webkit-text-size-adjust: 100%; /* avoid browser text auto-zoom */
+  overflow-x: hidden; 
+  -webkit-text-size-adjust: 100%; 
 }
 
 body {
@@ -27,13 +26,10 @@ body {
   transition: opacity 3s ease;
 }
 
-/* Reveal */
 body.fade-in {
   opacity: 1;
 }
 
-
-/* Side nav */
 .side-nav {
     position: fixed;
     top: 0;
@@ -53,17 +49,15 @@ body.fade-in {
 }
 
 
-/* Disable clicking only the top-level active link */
 .side-nav > ul > li.active > a {
     pointer-events: none;
     cursor: default;
     color: #ff4081;
 }
 
-/* Sub-nav indentation */
 .side-nav ul li ul.sub-nav {
     list-style: none;
-    padding-left: 1.5rem; /* indent */
+    padding-left: 1.5rem; 
     margin-top: 0.5rem;
 }
 
@@ -80,9 +74,9 @@ body.fade-in {
     transition: color 0.3s, font-weight 0.3s;
 }
 
-/* Accent color highlight for active section */
+
 .side-nav ul li ul.sub-nav li a.active {
-    color: #ff6f61; /* complementary accent color */
+    color: #ff6f61; 
     font-weight: 600;
 }
 
@@ -110,10 +104,9 @@ body.fade-in {
 
 .side-nav li.active {
     color: #ff4081;
-    pointer-events: none; /* Prevent clicking the current page */
+    pointer-events: none; 
 }
 
-/* Headings */
 h1, h2 {
     margin: 0 0 1rem 0;
     font-family: 'Cinzel', serif;
@@ -123,8 +116,8 @@ h1, h2 {
 /* Project Overview */
 .project-overview {
     max-width: 1100px;
-    margin-left: 220px;   /* move right past the 200px sidebar + small gap */
-    margin-right: 20px;   /* optional right spacing */
+    margin-left: 220px;   
+    margin-right: 20px;   
     padding: 2rem
 }
 
@@ -142,7 +135,6 @@ h1, h2 {
     color: #ffffff;
 }
 
-/* Metadata list */
 .project-meta {
     list-style: none;
     padding: 0;
@@ -160,7 +152,7 @@ h1, h2 {
     width: 100vw;
     height: 750px;
     margin: 0 auto;
-    margin-bottom: 50px; /* Space between sections */
+    margin-bottom: 50px;
     padding: 40px;
 }
 
@@ -176,8 +168,8 @@ h1, h2 {
 
 .case-title {
   position: absolute;
-  top: 160px;       /* sits above slider */
-  left: 260px;      /* push it 20px past the sidebar */
+  top: 160px;       
+  left: 260px;     
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
@@ -187,8 +179,8 @@ h1, h2 {
 .slider {
     position: relative;
     height: 100%;
-    width: calc(90% - 190px); /* shrink by sidebar width */
-    margin-left: 200px;        /* push it clear of nav */
+    width: calc(90% - 190px); 
+    margin-left: 200px;       
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,12 +210,12 @@ h1, h2 {
     top: 22%;
     margin-left: 2%;
     border-radius: 20px;
-    overflow: hidden; /* keep video inside rounded corners */
+    overflow: hidden; 
     z-index: 1;
 }
 
 
-/* Ensure video fills the box */
+
 .box1 video, .box2 video, .box3 video,
 .box4 video,.box5 video,.box6 video,
 .box7 video{
@@ -235,19 +227,19 @@ h1, h2 {
 .box6 img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* keeps aspect ratio inside box */
+    object-fit: contain;  
 }
 
 .slider-controls {
     position: absolute;
     top: 50%;
-    left: 200px;           /* push controls right, past the 200px sidebar */
-    width: calc(90% - 190px); /* only span the content area */
+    left: 200px;       
+    width: calc(90% - 190px); 
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
     z-index: 5;
-    padding: 0 20px; /* optional: add breathing room so arrows aren’t flush */
+    padding: 0 20px; 
 }
 
 .prev, .next {
@@ -266,7 +258,7 @@ h1, h2 {
   right: 2rem;
   z-index: 20;
   opacity: 0;
-  pointer-events: none; /* avoid ghost clicks */
+  pointer-events: none;
   transition: opacity 0.5s ease;
 }
 
@@ -276,7 +268,7 @@ h1, h2 {
 }
 
 .next-project a {
-  background: #ff1f70; /* standout accent */
+  background: #ff1f70;
   color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
@@ -315,12 +307,12 @@ h1, h2 {
 
 .footer p {
     margin: 0;
-    font-size: 0.875rem; /* Adjust font size for readability */
+    font-size: 0.875rem; 
 }
 
 #footer-sentinel {
   position: relative;
-  height: 1px;  /* tiny trigger */
+  height: 1px;  
   width: 100%;
 }
 
@@ -345,16 +337,9 @@ h1, h2 {
 
 
 
-
-
-
-/* -------------------------
-   Mobile tweaks (≤ 767px)
-   ------------------------- */
 @media (max-width: 767px) {
   :root { --sidebar-width: 0px; --sidebar-gap: 0px; }
 
-  /* Show toggle, hide sidebar off-canvas */
 /*  
   .menu-toggle {
     display: block;
@@ -362,36 +347,29 @@ h1, h2 {
     padding: 0.2em 0.4em;
   } */
 
-  /* Add space so content starts below the top by 20px */
   body {
-    padding-top: 20px; /* space between top of viewport and content start */
+    padding-top: 20px;
     box-sizing: border-box;
   }
-
-  /* Optional: offset all main content so it respects the padding */
-  
-
-  /* Menu toggle stays fixed on top */
-
 
 .menu-toggle-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 65px;          /* matches icon height */
+    height: 65px;       
     background-color: #000;
-    z-index: 999;          /* below icon */
+    z-index: 999;         
   }
 
-  /* Menu icon above the black bar */
+
   .menu-toggle {
     position: fixed;
     top:1rem; 
     left: 15px;
     font-size: 6vw;
     padding: 0.2em 0.4em;
-    z-index: 2000;         /* higher than bar so icon appears on top */
+    z-index: 2000;        
     display: block;
   }
 
@@ -406,7 +384,6 @@ h1, h2 {
   .side-nav.open { left: 0; }
 
 
-  /* Reset offsets so everything uses full width */
   .project-overview {
     margin-top: 2%;
     margin-left: 0;
@@ -436,7 +413,6 @@ h1, h2 {
     margin-left: 2%;
 }
 
-  /* Slider and controls expand full width */
   .slider {
     margin-left: 0;
     width: 70%;
@@ -461,9 +437,9 @@ h1, h2 {
 .next {
   background: none;
   border: none;
-  font-size: 2.5rem;   /* shrink text size */
-  width: 24px;         /* smaller button width */
-  height: 24px;        /* square clickable area */
+  font-size: 2.5rem;  
+  width: 24px;         
+  height: 24px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -475,11 +451,9 @@ h1, h2 {
 }
 
 .next {
-  margin-right: 2%;   /* cleaner than -9% */
+  margin-right: 2%;  
 }
 
-
-  /* Stack slides vertically for natural scrolling on mobile */
   .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 {
     position: relative;
     left: auto;
@@ -490,7 +464,6 @@ h1, h2 {
     margin: 0.75rem 0;
   }
 
-  /* Footer adjustments */
   .footer {
     padding: 8px;
     text-align: center;
@@ -501,7 +474,6 @@ h1, h2 {
     margin: 0;
   }
 
-  /* Next project becomes inline center link */
   /* .next-project {
     position: relative;
     bottom: auto;
@@ -511,12 +483,12 @@ h1, h2 {
   } */
 
   .next-project {
-  position: fixed;   /* or absolute, depending on design */
+  position: fixed;   
   bottom: 3rem;
   right: 1rem;
-  opacity: 1;        /* ensure visible */
+  opacity: 1;       
   pointer-events: auto;
-  transition: none;  /* optional, removes fade */
+  transition: none;  
 }
 
 #footer-sentinel {
