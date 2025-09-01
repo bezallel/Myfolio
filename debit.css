@@ -475,6 +475,7 @@ main {
 
 
   .menu-toggle {
+    cursor: Pointer;  
     position: fixed;
     top:1rem; 
     left: 15px;
