@@ -372,12 +372,13 @@ h1, h2 {
   
 
   /* Menu toggle stays fixed on top */
-  .menu-toggle-bar {
+
+.menu-toggle-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 40px;          /* matches icon height */
+    height: 65px;          /* matches icon height */
     background-color: #000;
     z-index: 999;          /* below icon */
   }
@@ -385,10 +386,10 @@ h1, h2 {
   /* Menu icon above the black bar */
   .menu-toggle {
     position: fixed;
-    top: 0;
+    top:1rem; 
     left: 15px;
     font-size: 6vw;
-    padding: 0.2em 0.2em;
+    padding: 0.2em 0.4em;
     z-index: 2000;         /* higher than bar so icon appears on top */
     display: block;
   }
