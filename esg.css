@@ -5,16 +5,17 @@
 
 :root{
   --sidebar-width: 200px;
-  --sidebar-gap: 20px; 
+  --sidebar-gap: 20px; /* extra gap between sidebar and content */
 }
 
+/* Base / body */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden; 
-  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden; /* prevent horizontal scroll/zoom */
+  -webkit-text-size-adjust: 100%; /* avoid browser text auto-zoom */
 }
 
 body {
@@ -26,11 +27,13 @@ body {
   transition: opacity 3s ease;
 }
 
-
+/* Reveal */
 body.fade-in {
   opacity: 1;
 }
 
+
+/* Side nav */
 .side-nav {
     position: fixed;
     top: 0;
@@ -50,15 +53,17 @@ body.fade-in {
 }
 
 
+/* Disable clicking only the top-level active link */
 .side-nav > ul > li.active > a {
     pointer-events: none;
     cursor: default;
     color: #ff4081;
 }
 
+/* Sub-nav indentation */
 .side-nav ul li ul.sub-nav {
     list-style: none;
-    padding-left: 1.5rem; 
+    padding-left: 1.5rem; /* indent */
     margin-top: 0.5rem;
 }
 
@@ -75,8 +80,9 @@ body.fade-in {
     transition: color 0.3s, font-weight 0.3s;
 }
 
+/* Accent color highlight for active section */
 .side-nav ul li ul.sub-nav li a.active {
-    color: #ff6f61; 
+    color: #ff6f61; /* complementary accent color */
     font-weight: 600;
 }
 
@@ -104,19 +110,21 @@ body.fade-in {
 
 .side-nav li.active {
     color: #ff4081;
-    pointer-events: none; 
+    pointer-events: none; /* Prevent clicking the current page */
 }
 
+/* Headings */
 h1, h2 {
     margin: 0 0 1rem 0;
     font-family: 'Cinzel', serif;
     color: #ffffff;
 }
 
+/* Project Overview */
 .project-overview {
     max-width: 1100px;
-    margin-left: 220px;   
-    margin-right: 20px;  
+    margin-left: 220px;   /* move right past the 200px sidebar + small gap */
+    margin-right: 20px;   /* optional right spacing */
     padding: 2rem
 }
 
@@ -152,7 +160,7 @@ h1, h2 {
     width: 100vw;
     height: 750px;
     margin: 0 auto;
-    margin-bottom: 50px; 
+    margin-bottom: 50px; /* Space between sections */
     padding: 40px;
 }
 
@@ -168,8 +176,8 @@ h1, h2 {
 
 .case-title {
   position: absolute;
-  top: 160px;       
-  left: 260px;     
+  top: 160px;       /* sits above slider */
+  left: 260px;      /* push it 20px past the sidebar */
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
@@ -179,8 +187,8 @@ h1, h2 {
 .slider {
     position: relative;
     height: 100%;
-    width: calc(90% - 190px); 
-    margin-left: 200px;       
+    width: calc(90% - 190px); /* shrink by sidebar width */
+    margin-left: 200px;        /* push it clear of nav */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,11 +218,12 @@ h1, h2 {
     top: 22%;
     margin-left: 2%;
     border-radius: 20px;
-    overflow: hidden; 
+    overflow: hidden; /* keep video inside rounded corners */
     z-index: 1;
 }
 
 
+/* Ensure video fills the box */
 .box1 video, .box2 video, .box3 video,
 .box4 video,.box5 video,.box6 video,
 .box7 video{
@@ -226,19 +235,19 @@ h1, h2 {
 .box8 img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  
+    object-fit: contain;  /* keeps aspect ratio inside box */
 }
 
 .slider-controls {
     position: absolute;
     top: 50%;
-    left: 200px;           
-    width: calc(90% - 190px);
+    left: 200px;           /* push controls right, past the 200px sidebar */
+    width: calc(90% - 190px); /* only span the content area */
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
     z-index: 5;
-    padding: 0 20px; 
+    padding: 0 20px; /* optional: add breathing room so arrows aren’t flush */
 }
 
 .prev, .next {
@@ -257,7 +266,7 @@ h1, h2 {
   right: 2rem;
   z-index: 20;
   opacity: 0;
-  pointer-events: none; 
+  pointer-events: none; /* avoid ghost clicks */
   transition: opacity 0.5s ease;
 }
 
@@ -267,7 +276,7 @@ h1, h2 {
 }
 
 .next-project a {
-  background: #ff1f70; 
+  background: #ff1f70; /* standout accent */
   color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
@@ -306,11 +315,12 @@ h1, h2 {
 
 .footer p {
     margin: 0;
-    font-size: 0.875rem; 
+    font-size: 0.875rem; /* Adjust font size for readability */
+}
 
 #footer-sentinel {
   position: relative;
-  height: 1px;  
+  height: 1px;  /* tiny trigger */
   width: 100%;
 }
 
@@ -335,89 +345,149 @@ h1, h2 {
 
 
 
+
+
+
+/* -------------------------
+   Mobile tweaks (≤ 767px)
+   ------------------------- */
 @media (max-width: 767px) {
+  :root { --sidebar-width: 0px; --sidebar-gap: 0px; }
 
-  main {
-    margin-left: 0 !important;
-    padding: 1rem;
-  }
+  /* Show toggle, hide sidebar off-canvas */
+/*  
+  .menu-toggle {
+    display: block;
+    font-size: 5vw;
+    padding: 0.2em 0.4em;
+  } */
 
-  .project-overview {
-    width: 460px;
-    max-width: 520px;
-    margin: 1rem auto;
-    padding: 2.5rem;
+  /* Add space so content starts below the top by 20px */
+  body {
+    padding-top: 20px; /* space between top of viewport and content start */
     box-sizing: border-box;
   }
 
+  /* Optional: offset all main content so it respects the padding */
+  
+
+  /* Menu toggle stays fixed on top */
+  .menu-toggle-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 65px;          /* matches icon height */
+    background-color: #000;
+    z-index: 999;          /* below icon */
+  }
+
+  /* Menu icon above the black bar */
+  .menu-toggle {
+    position: fixed;
+    top:1rem; 
+    left: 15px;
+    font-size: 6vw;
+    padding: 0.2em 0.4em;
+    z-index: 2000;         /* higher than bar so icon appears on top */
+    display: block;
+  }
+
+  .side-nav {
+    left: -110%;
+    width: 55%;
+    max-width: 300px;
+    transition: left .25s ease-in-out;
+    padding-top: 60px;
+    z-index: 1000; 
+  }
+  .side-nav.open { left: 0; }
+
+
+  /* Reset offsets so everything uses full width */
+  .project-overview {
+    margin-top: 2%;
+    margin-left: 0;
+    padding: 2.1rem;
+    width: 380px;
+    max-width: 400px;
+    box-sizing: border-box;
+     overflow: hidden; 
+  }
+  .case-title {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: .4rem 0;
+    text-align: center;
+  }
+
   .container h1 {
-    text-align: left;      
-    margin: 0 0 0 20px;     
-    font-size: 1.6rem;
-    display: none;
+    text-align: left;
+    /* margin: 0 0 0 20px;    */
+    font-size: 1.7rem;
+    /* display: none; */
 }
   .container {
     height: 350px;
     margin-left: 2%;
 }
 
-  
+  /* Slider and controls expand full width */
   .slider {
-    width: 90%;
-    height: 60vw;        
-    position: relative;
-    overflow: hidden;
-    margin: .5rem 1.2rem;
+    margin-left: 0;
+    width: 70%;
+    padding: 0 8px;
+    min-height: auto;
+    perspective: none;
   }
 
 
+ .slider-controls {
+  position: absolute;
+  left: 0;
+  width: 80%;
+  padding: 8px;
+  margin-top: 52px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -1%;
+}
+
+.prev,
+.next {
+  background: none;
+  border: none;
+  font-size: 2.5rem;   /* shrink text size */
+  width: 24px;         /* smaller button width */
+  height: 24px;        /* square clickable area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.prev {
+  margin-left: -2%;
+}
+
+.next {
+  margin-right: 2%;   /* cleaner than -9% */
+}
+
+
+  /* Stack slides vertically for natural scrolling on mobile */
   .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 {
-    position: absolute !important;
-    top: 0;
-    left: 0;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
     width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    transform: translateX(100%);
+    aspect-ratio: 16 / 9;
+    margin: 0.75rem 0;
   }
 
-  .box1 { transform: translateX(0); }
-
-  .box1 video, .box2 video, .box3 video,
-  .box4 video, .box5 video, .box6 video,
-  .box7 video, .box8 img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 12px;
-  }
-
-
-  .slider-controls {
-    position: absolute;
-    /* bottom: 0.5rem; */
-    left: 0;
-    width: 110%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 .2rem;
-    margin-top: -12%;
-    margin-left: -15px;
-
-    z-index: 10;
-  }
-  .prev{
-    background: none;
-    width: 70px;
-    margin-left: 2%;
-  }
-
-  .next {
-    background: none;
-    width: 70px;
-  }
-
-  
+  /* Footer adjustments */
   .footer {
     padding: 8px;
     text-align: center;
@@ -428,39 +498,26 @@ h1, h2 {
     margin: 0;
   }
 
+  /* Next project becomes inline center link */
+  /* .next-project {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 1.25rem auto;
+    text-align: center;
+  } */
 
-  .menu-toggle {
-    display: block;
-    font-size: 5vw;
-    padding: 0.2em 0.4em;
-  }
-
-
-  .side-nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 220px;
-    height: 100vh;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: transform 0.3s ease, left 0.3s ease;
-  }
-
-  .side-nav.open {
-    left: 0;
-    transform: translateX(0);
-  }
-
-.next-project {
-  position: fixed;   
+  .next-project {
+  position: fixed;   /* or absolute, depending on design */
   bottom: 3rem;
   right: 1rem;
-  opacity: 1;        
+  opacity: 1;        /* ensure visible */
   pointer-events: auto;
-  transition: none; 
+  transition: none;  /* optional, removes fade */
+}
+
+#footer-sentinel {
+  height: 1px;
 }
 }
+
