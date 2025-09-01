@@ -129,11 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const nextProject = document.querySelector('.next-project');
   const sentinel = document.getElementById('footer-sentinel');
@@ -178,20 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  const menuBtn = document.querySelector('.menu-toggle');
   const sideNav = document.querySelector('.side-nav');
 
@@ -212,10 +193,10 @@ document.querySelectorAll("a[href]").forEach(link => {
     if (link.target === "_blank" || link.href.includes("#")) return;
 
     e.preventDefault();
-    document.body.classList.remove("fade-in"); // triggers fade-out
+    document.body.classList.remove("fade-in"); 
     document.body.style.opacity = "0";
     setTimeout(() => {
       window.location.href = link.href;
-    }, 400); // match transition duration
+    }, 400); 
   });
 });
