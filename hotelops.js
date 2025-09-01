@@ -1,11 +1,10 @@
-// Select sub-nav links
+
 const subNavLinks = document.querySelectorAll('.sub-nav li a'); 
 const sections = document.querySelectorAll('main section');
 
 function updateActiveLink() {
     let currentSection = '';
 
-    // --- Scrollspy logic (in-page sections) ---
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         if (window.pageYOffset >= sectionTop - 100) {
@@ -22,7 +21,6 @@ function updateActiveLink() {
         }
     });
 
-    // --- Parent highlighting for Hotel Ops ---
     const currentPath = window.location.pathname.split('/').pop().split('?')[0];
     if (currentPath === 'debit.html') {
         const parentLi = document.querySelector('.side-nav a[href="debit.html"]')?.closest('li');
@@ -31,29 +29,21 @@ function updateActiveLink() {
             parentAnchor?.classList.add('active-parent');
         }
 
-        // If no section yet (top of page), default to first sub-nav
         if (!currentSection && subNavLinks.length > 0) {
             subNavLinks[0].classList.add('active');
         }
     }
 }
 
-// Run on scroll + on load
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('DOMContentLoaded', updateActiveLink);
 
 
-
-
-
-
-// Sticky scroll text updater
 const items = document.querySelectorAll(".scroll-item");
 const headingEl = document.getElementById("case-heading");
 const textEl = document.getElementById("case-text");
 const nextProject = document.querySelector(".next-project");
 
-// Observer just for heading/text
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -73,7 +63,6 @@ const observer = new IntersectionObserver(
 );
 items.forEach((item) => observer.observe(item));
 
-// --- Handle Next Project button ---
 const pdfItem = Array.from(items).find(i => i.querySelector('img')?.alt === 'App Homepage');
 const impactItem = document.querySelector('.scroll-item.impact');
 
@@ -82,8 +71,7 @@ if (pdfItem && impactItem && nextProject) {
     const pdfRect = pdfItem.getBoundingClientRect();
     const impactRect = impactItem.getBoundingClientRect();
 
-    // Button shows if we've scrolled past the Debit Note PDF
-    // AND have not scrolled past Impact
+   
     const passedPDF = pdfRect.top <= window.innerHeight * 0.6;
     const beforeImpactEnd = impactRect.bottom > window.innerHeight * 0.2;
 
@@ -94,7 +82,6 @@ if (pdfItem && impactItem && nextProject) {
     }
   }
 
-  // Run once + on scroll/resize
   updateNextProjectVisibility();
   window.addEventListener('scroll', updateNextProjectVisibility, { passive: true });
   window.addEventListener('resize', updateNextProjectVisibility);
@@ -102,10 +89,6 @@ if (pdfItem && impactItem && nextProject) {
     setTimeout(updateNextProjectVisibility, 200)
   );
 }
-
-
-
-
 
 
  const menuBtn = document.querySelector('.menu-toggle');
@@ -124,19 +107,9 @@ if (pdfItem && impactItem && nextProject) {
 });
 
 
-
-
-
-
-
-
-
-
-// For mobile devices, inject heading/text inside each scroll-item
-// Inject heading + text into each .scroll-item for mobile (robust)
 function injectMobileText() {
-  if (window.innerWidth >= 768) return; // only on mobile
-      // Inject the case title at the top (once)
+  if (window.innerWidth >= 768) return; 
+    
   if (!document.querySelector(".scroll-item .case-title")) {
     const firstItem = document.querySelector(".scroll-item");
     const mobileTitle = document.createElement("h1");
@@ -162,7 +135,6 @@ function injectMobileText() {
     headingEl.textContent = item.dataset.heading || "";
     textEl.textContent = item.dataset.text || "";
 
-    // Prepend so heading -> text -> (existing image/video...) order is guaranteed
     item.prepend(textEl);
     item.prepend(headingEl);
 
@@ -178,7 +150,6 @@ function injectMobileText() {
   if (stickyPanel) stickyPanel.style.display = "none";
 }
 
-// run on load (ensures images/layout exist) and on resize/orientation
 window.addEventListener("load", injectMobileText);
 window.addEventListener("orientationchange", () => setTimeout(injectMobileText, 300));
 window.addEventListener("resize", () => {
@@ -201,10 +172,10 @@ document.querySelectorAll("a[href]").forEach(link => {
     if (link.target === "_blank" || link.href.includes("#")) return;
 
     e.preventDefault();
-    document.body.classList.remove("fade-in"); // triggers fade-out
+    document.body.classList.remove("fade-in"); 
     document.body.style.opacity = "0";
     setTimeout(() => {
       window.location.href = link.href;
-    }, 400); // match transition duration
+    }, 400);
   });
 });
