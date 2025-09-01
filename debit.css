@@ -139,6 +139,16 @@ h1, h2 {
 
 
 
+.project-description .disclaimer {
+  font-size: 0.9rem;
+  color: #605656 !important; /* subtle informational blue */
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+
+
+
 
 .project-download {
   margin-top: 1.5rem;
@@ -267,13 +277,6 @@ main {
   margin-top: 20%;
 }
 
-.notice {
-  font-weight: 700;          /* makes it bold */
-  color: #ff6f61;            /* soft orange (adjust as desired) */
-  font-size: 1.05rem;        /* slightly larger for emphasis */
-}
-
-
 .case-title {
   font-size: 2rem;
   font-weight: 700;
@@ -340,6 +343,15 @@ main {
   max-width: 600px;
   /* margin: 0 auto; */
 }
+
+
+.notice {
+  font-weight: 700;          /* makes it bold */
+  color: #ff6f61;            /* soft orange (adjust as desired) */
+  font-size: 1.05rem;        /* slightly larger for emphasis */
+}
+
+
 
 /* Fade animation */
 .fade {
@@ -475,7 +487,6 @@ main {
 
 
 
-
 /* .menu-toggle { 
   display:block !important; 
   position:fixed; 
@@ -485,6 +496,7 @@ main {
   left:1rem; 
   z-index:5000; 
 } */
+
 
 .menu-toggle-bar {
     position: fixed;
@@ -506,7 +518,6 @@ main {
     z-index: 2000;         /* higher than bar so icon appears on top */
     display: block;
   }
-
 
   .side-nav {
     position: fixed;
@@ -606,6 +617,19 @@ main {
     max-width: 100%;
     margin-left: 0;
   }
+
+  .notice {
+  font-weight: 700;          /* makes it bold */
+  color: #ff6f61;            /* soft orange (adjust as desired) */
+  font-size: 1.05rem;        /* slightly larger for emphasis */
+}
+
+.project-description .disclaimer {
+  color: #605656 !important; 
+}
+
+
+
 
   /* .next-project {
     bottom: 3rem;   
