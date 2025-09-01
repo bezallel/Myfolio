@@ -78,7 +78,6 @@ items.forEach((item) => observer.observe(item));
 
 
 
-// ---Next Project button ---
 const pdfItem = Array.from(items).find(i => i.querySelector('img')?.alt === 'Debit Note PDF');
 const impactItem = document.querySelector('.scroll-item.impact');
 
