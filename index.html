@@ -7,10 +7,8 @@
     <title>Debit Note Case Study</title>
 </head>
 <body>
-    
-    <div class="menu-toggle-bar"></div>
-    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
-    
+<div class="menu-toggle-bar"></div> 
+<button class="menu-toggle" aria-label="Toggle Menu">☰</button>
      <nav class="side-nav">
     <ul>
         <li><a href="hero.html">Home</a></li>
@@ -78,35 +76,51 @@
 
     <!-- Scrollable images -->
     <div class="sticky-scroll">
-      <div class="scroll-item" data-heading="Turning Overcharges into Savings"
-           data-text="While reviewing supplier invoices against MOUs, I uncovered systematic overcharges. Planned values (green) vs. actual charges (red) highlighted financial leakage often overlooked in daily operations.">
+      <div class="scroll-item" data-heading="Problem"
+           data-text="Discrepancies between planned orders, received quantities, and invoiced amounts led to supplier overcharging, missed recoveries, and labor-intensive manual reconciliation. <br>
+            <span class='notice'>Objective:</span> Develop a system to automatically detect overcharging, calculate debit amounts, generate debit notes, and provide analytics on savings, leakage, and supplier performance.">
+        <img src="./Images/moneyleak.jpg" alt="Dataset discrepancies">
+      </div>
+
+      <div class="scroll-item" data-heading="Step 1: Inventory Analysis"
+           data-text="Compares planned units (green), invoiced units, and received units.
+            Discrepancies where invoiced amounts exceed planned or received quantities are flagged in red.">
         <img src="./Images/adatashot.png" alt="Dataset discrepancies">
       </div>
 
-      <div class="scroll-item" data-heading="Quantifying Supplier Leakage"
-           data-text="Quantifying discrepancies showed significant leakage across multiple suppliers. Comparing leakage against potential recoveries revealed hidden savings opportunities.">
+      <div class="scroll-item" data-heading="Step 2: Analytics and Insights"
+           data-text="Total Leakage vs Total Savings: Overcharged amounts vs recovered amounts; savings exceed leakage.
+          Supplier Performance: Highlights habitual defaulters by comparing leakage vs savings per supplier.">
         <img src="./Images/aaatotasup.png" alt="Leakage vs Savings">
       </div>
 
-      <div class="scroll-item" data-heading="Building the Debit Note System"
-           data-text="To address this, I built a debit note system: a simple tool to automate discrepancy detection and enforce supplier terms, strengthening procurement governance.">
-        <img src="./Images/adebi1.png" alt="App Homepage">
+      <div class="scroll-item" data-heading="Step 3: System Interface and Upload"
+           data-text="Web-based system (HTML, CSS, JS) allows Excel uploads.Automatically calculates debit amounts and organizes results by supplier and invoice.<br>
+           <span class='notice'>Impact:</span> Reduces manual effort, prevents errors, and centralizes debit calculations.">
+        <!-- <img src="./Images/adebi1.png" alt="App Homepage"> -->
+         <video autoplay muted loop class="appy-video">
+          <source src="./Videos/adebi01.mp4" type="video/mp4">
+         </video>
       </div>
 
-      <div class="scroll-item" data-heading="Seamless Data Upload"
-           data-text="Users upload invoice data directly. The system validates figures against agreements instantly, eliminating slow, error-prone manual checks.">
-        <img src="./Images/adebi2.png" alt="Dataset Upload">
+      <div class="scroll-item" data-heading="Step 4: Automated Debit Note Generation"
+           data-text="Generates debit notes automatically, including overcharge amounts, supplier details, and invoice references.
+          Supports PDF export for professional documentation.">
+        <img src="./Images/adebi3.png" alt="Dataset Upload">
       </div>
 
-      <div class="scroll-item" data-heading="Generated Invoice in App"
-           data-text="The system produces a clear debit note draft within the app, summarizing discrepancies with full transparency.">
-        <img src="./Images/adebi3.png" alt="Debit Note view">
-      </div>
+     <div class="scroll-item" data-heading="Generated Invoice in App"
+          data-text="The system generates debit notes automatically, including calculated overcharge amounts, supplier details, and invoice references.
+          Each debit note is exported directly as a PDF for official documentation and submission.<br>
+          <span class='notice'>Impact:</span> Streamlines recovery, improves accuracy, and maintains audit-ready records.">
+          <img src="./Images/adebinote.png" alt="Debit Note view">
+    </div>
 
-      <div class="scroll-item" data-heading="PDF Version of Debit Note"
+
+      <!-- <div class="scroll-item" data-heading="PDF Version of Debit Note"
            data-text="Finally, debit notes can be exported as PDFs, ready to print or send via email to suppliers. This closes the loop from data discovery to supplier communication.">
         <img src="./Images/adebinote.png" alt="Debit Note PDF">
-      </div>
+      </div> -->
     </div>
   </div>
 
