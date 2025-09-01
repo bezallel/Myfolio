@@ -3,6 +3,21 @@
 
 
 
+:root{
+  --sidebar-width: 200px;
+  --sidebar-gap: 20px; /* extra gap between sidebar and content */
+}
+
+/* Base / body */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* prevent horizontal scroll/zoom */
+  -webkit-text-size-adjust: 100%; /* avoid browser text auto-zoom */
+}
+
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
@@ -71,8 +86,6 @@ body.fade-in {
     font-weight: 600;
 }
 
-
-
 .side-nav li {
     margin: 1rem 0;
     cursor: pointer;
@@ -99,7 +112,6 @@ body.fade-in {
     color: #ff4081;
     pointer-events: none; /* Prevent clicking the current page */
 }
- 
 
 /* Headings */
 h1, h2 {
@@ -115,7 +127,6 @@ h1, h2 {
     margin-right: 20px;   /* optional right spacing */
     padding: 2rem
 }
-
 
 .project-overview h2 {
   margin-top: 10px;
@@ -144,10 +155,6 @@ h1, h2 {
     color: #ffffff;
 }
 
-
-
-
-
 .container {
     position: relative;
     width: 100vw;
@@ -167,7 +174,6 @@ h1, h2 {
     z-index: 6;
 }
 
-
 .case-title {
   position: absolute;
   top: 160px;       /* sits above slider */
@@ -177,7 +183,6 @@ h1, h2 {
   color: #fff;
   z-index: 6;
 }
-
 
 .slider {
     position: relative;
@@ -189,7 +194,6 @@ h1, h2 {
     align-items: center;
     perspective: 1000px;
 }
-
 
 .box1, .box2, .box3, .box4, .box5, .box6 {
     background-position: center center;
@@ -218,9 +222,11 @@ h1, h2 {
     z-index: 1;
 }
 
+
 /* Ensure video fills the box */
 .box1 video, .box2 video, .box3 video,
-.box4 video,.box5 video{
+.box4 video,.box5 video,.box6 video,
+.box7 video{
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -231,18 +237,6 @@ h1, h2 {
     height: 100%;
     object-fit: contain;  /* keeps aspect ratio inside box */
 }
-
-
-/* .slider-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    z-index: 5;
-} */
-
 
 .slider-controls {
     position: absolute;
@@ -256,7 +250,6 @@ h1, h2 {
     padding: 0 20px; /* optional: add breathing room so arrows aren’t flush */
 }
 
-
 .prev, .next {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -265,10 +258,6 @@ h1, h2 {
     cursor: pointer;
     font-size: 3rem;
 }
-
-
-
-
 
 
 .next-project {
@@ -305,7 +294,10 @@ h1, h2 {
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
-
+.next-project.show {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
 
 
 .footer {
@@ -326,6 +318,11 @@ h1, h2 {
     font-size: 0.875rem; /* Adjust font size for readability */
 }
 
+#footer-sentinel {
+  position: relative;
+  height: 1px;  /* tiny trigger */
+  width: 100%;
+}
 
 
 
@@ -345,89 +342,150 @@ h1, h2 {
 }
 
 
-/* --- Mobile Layout (max-width: 767px) --- */
+
+
+
+
+
+
+/* -------------------------
+   Mobile tweaks (≤ 767px)
+   ------------------------- */
 @media (max-width: 767px) {
+  :root { --sidebar-width: 0px; --sidebar-gap: 0px; }
 
-  main {
-    margin-left: 0 !important;
-    padding: 1rem;
-  }
+  /* Show toggle, hide sidebar off-canvas */
+/*  
+  .menu-toggle {
+    display: block;
+    font-size: 5vw;
+    padding: 0.2em 0.4em;
+  } */
 
-  /* Project overview centered with side padding */
-  .project-overview {
-    width: 460px;
-    max-width: 520px;
-    margin: 1rem auto;
-    padding: 2.5rem;
+  /* Add space so content starts below the top by 20px */
+  body {
+    padding-top: 20px; /* space between top of viewport and content start */
     box-sizing: border-box;
   }
 
+  /* Optional: offset all main content so it respects the padding */
+  
+
+  /* Menu toggle stays fixed on top */
+  .menu-toggle-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40px;          /* matches icon height */
+    background-color: #000;
+    z-index: 999;          /* below icon */
+  }
+
+  /* Menu icon above the black bar */
+  .menu-toggle {
+    position: fixed;
+    top: 0;
+    left: 15px;
+    font-size: 6vw;
+    padding: 0.2em 0.2em;
+    z-index: 2000;         /* higher than bar so icon appears on top */
+    display: block;
+  }
+
+  .side-nav {
+    left: -110%;
+    width: 55%;
+    max-width: 300px;
+    transition: left .25s ease-in-out;
+    padding-top: 60px;
+    z-index: 1000; 
+  }
+  .side-nav.open { left: 0; }
+
+
+  /* Reset offsets so everything uses full width */
+  .project-overview {
+    margin-top: 2%;
+    margin-left: 0;
+    padding: 2.1rem;
+    width: 380px;
+    max-width: 400px;
+    box-sizing: border-box;
+     overflow: hidden; 
+  }
+  
+  .case-title {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin: .4rem 0;
+    text-align: center;
+  }
+
   .container h1 {
-    text-align: left;       /* align left instead of center */
-    margin: 0 0 0 20px;     /* 20px space from left, no top/bottom margin */
-    font-size: 1.6rem;
-    display: none;
+    text-align: left;
+    /* margin: 0 0 0 20px;    */
+    font-size: 1.7rem;
+    /* display: none; */
 }
   .container {
     height: 350px;
     margin-left: 2%;
 }
 
-  /* Slider wrapper with fixed aspect ratio for absolute slides */
+  /* Slider and controls expand full width */
   .slider {
-    width: 90%;
-    height: 60vw;         /* maintain approximate aspect ratio */
-    position: relative;
-    overflow: hidden;
-    margin: .5rem 1.2rem;
+    margin-left: 0;
+    width: 70%;
+    padding: 0 8px;
+    min-height: auto;
+    perspective: none;
   }
 
-  /* Slides stacked absolutely for JS sliding */
+
+ .slider-controls {
+  position: absolute;
+  left: 0;
+  width: 80%;
+  padding: 8px;
+  margin-top: 52px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: -1%;
+}
+
+.prev,
+.next {
+  background: none;
+  border: none;
+  font-size: 2.5rem;   /* shrink text size */
+  width: 24px;         /* smaller button width */
+  height: 24px;        /* square clickable area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.prev {
+  margin-left: -2%;
+}
+
+.next {
+  margin-right: 2%;   /* cleaner than -9% */
+}
+
+
+  /* Stack slides vertically for natural scrolling on mobile */
   .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 {
-    position: absolute !important;
-    top: 0;
-    left: 0;
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
     width: 100%;
-    height: 100%;
-    border-radius: 12px;
-    transform: translateX(100%);
-  }
-
-  .box1 { transform: translateX(0); }
-
-  /* Scale videos/images inside slides */
-  .box1 video, .box2 video, .box3 video,
-  .box4 video, .box5 video, .box6 video,
-  .box7 video, .box8 img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 12px;
-  }
-
-  /* Slider controls at bottom inside slider */
-  .slider-controls {
-    position: absolute;
-    /* bottom: 0.5rem; */
-    left: 0;
-    width: 110%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 .2rem;
-    margin-top: -12%;
-    margin-left: -15px;
-
-    z-index: 10;
-  }
-  .prev{
-    background: none;
-    width: 70px;
-    margin-left: 2%;
-  }
-
-  .next {
-    background: none;
-    width: 70px;
+    aspect-ratio: 16 / 9;
+    margin: 0.75rem 0;
   }
 
   /* Footer adjustments */
@@ -441,34 +499,16 @@ h1, h2 {
     margin: 0;
   }
 
-  /* Hamburger menu */
-  .menu-toggle {
-    display: block;
-    font-size: 5vw;
-    padding: 0.2em 0.4em;
-  }
+  /* Next project becomes inline center link */
+  /* .next-project {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 1.25rem auto;
+    text-align: center;
+  } */
 
-  /* Side nav hidden by default */
-  .side-nav {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    width: 220px;
-    height: 100vh;
-    background: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    transition: transform 0.3s ease, left 0.3s ease;
-  }
-
-  .side-nav.open {
-    left: 0;
-    transform: translateX(0);
-  }
-
-.next-project {
+  .next-project {
   position: fixed;   /* or absolute, depending on design */
   bottom: 3rem;
   right: 1rem;
@@ -476,4 +516,9 @@ h1, h2 {
   pointer-events: auto;
   transition: none;  /* optional, removes fade */
 }
+
+#footer-sentinel {
+  height: 1px;
 }
+}
+
