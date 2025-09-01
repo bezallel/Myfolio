@@ -18,7 +18,7 @@
       
       
       document.addEventListener("DOMContentLoaded", function () {
-  // fade in hero
+
   const hero = document.querySelector(".hero");
   if (hero) {
     setTimeout(() => hero.classList.add("visible"), 50);
@@ -62,7 +62,6 @@ function updateColors() {
   const style = window.getComputedStyle(hero);
   const bg = style.backgroundImage;
 
-  // Pick the first rgb() color in the gradient as approximation
   const match = bg.match(/rgb[a]?\([^)]+\)/);
   if (!match) return;
 
