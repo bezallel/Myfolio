@@ -267,6 +267,13 @@ main {
   margin-top: 20%;
 }
 
+.notice {
+  font-weight: 700;          /* makes it bold */
+  color: #ff6f61;            /* soft orange (adjust as desired) */
+  font-size: 1.05rem;        /* slightly larger for emphasis */
+}
+
+
 .case-title {
   font-size: 2rem;
   font-weight: 700;
