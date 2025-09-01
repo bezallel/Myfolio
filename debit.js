@@ -164,7 +164,7 @@ function injectMobileText() {
     textEl.className = "mobile-text";
 
     headingEl.textContent = item.dataset.heading || "";
-    textEl.textContent = item.dataset.text || "";
+    textEl.innerHTML = item.dataset.text || "";
 
     // Prepend so heading -> text -> (existing image/video...) order is guaranteed
     item.prepend(textEl);
