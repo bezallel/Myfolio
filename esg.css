@@ -336,134 +336,88 @@ h1, h2 {
 
 
 @media (max-width: 767px) {
-  :root { --sidebar-width: 0px; --sidebar-gap: 0px; }
 
-/*  
-  .menu-toggle {
-    display: block;
-    font-size: 5vw;
-    padding: 0.2em 0.4em;
-  } */
-
-  body {
-    padding-top: 20px; 
-    box-sizing: border-box;
+  main {
+    margin-left: 0 !important;
+    padding: 1rem;
   }
-
-
-.menu-toggle-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 65px;        
-    background-color: #000;
-    z-index: 999;        
-  }
-
-
-  .menu-toggle {
-    position: fixed;
-    top:1rem; 
-    left: 15px;
-    font-size: 6vw;
-    padding: 0.2em 0.4em;
-    z-index: 2000;        
-    display: block;
-  }
-
-  .side-nav {
-    left: -110%;
-    width: 55%;
-    max-width: 300px;
-    transition: left .25s ease-in-out;
-    padding-top: 60px;
-    z-index: 1000; 
-  }
-  .side-nav.open { left: 0; }
-
-
 
   .project-overview {
-    margin-top: 2%;
-    margin-left: 0;
-    padding: 2.1rem;
-    width: 380px;
-    max-width: 400px;
+    width: 460px;
+    max-width: 520px;
+    margin: 1rem auto;
+    padding: 2.5rem;
     box-sizing: border-box;
-     overflow: hidden; 
-  }
-  .case-title {
-    position: relative;
-    left: auto;
-    top: auto;
-    margin: .4rem 0;
-    text-align: center;
   }
 
   .container h1 {
-    text-align: left;
-    /* margin: 0 0 0 20px;    */
-    font-size: 1.7rem;
-    /* display: none; */
+    text-align: left;      
+    margin: 0 0 0 20px;     
+    font-size: 1.6rem;
+    display: none;
 }
   .container {
     height: 350px;
     margin-left: 2%;
 }
 
+  
   .slider {
-    margin-left: 0;
-    width: 70%;
-    padding: 0 8px;
-    min-height: auto;
-    perspective: none;
+    width: 90%;
+    height: 60vw;        
+    position: relative;
+    overflow: hidden;
+    margin: .5rem 1.2rem;
   }
-
-
- .slider-controls {
-  position: absolute;
-  left: 0;
-  width: 80%;
-  padding: 8px;
-  margin-top: 52px;
-  display: flex;
-  justify-content: space-between;
-  margin-left: -1%;
-}
-
-.prev,
-.next {
-  background: none;
-  border: none;
-  font-size: 2.5rem;   
-  width: 24px;         
-  height: 24px;       
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.prev {
-  margin-left: -2%;
-}
-
-.next {
-  margin-right: 2%;  
-}
 
 
   .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8 {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: none;
+    position: absolute !important;
+    top: 0;
+    left: 0;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    margin: 0.75rem 0;
+    height: 100%;
+    border-radius: 12px;
+    transform: translateX(100%);
   }
 
+  .box1 { transform: translateX(0); }
+
+  .box1 video, .box2 video, .box3 video,
+  .box4 video, .box5 video, .box6 video,
+  .box7 video, .box8 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+
+
+  .slider-controls {
+    position: absolute;
+    /* bottom: 0.5rem; */
+    left: 0;
+    width: 110%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .2rem;
+    margin-top: -12%;
+    margin-left: -15px;
+
+    z-index: 10;
+  }
+  .prev{
+    background: none;
+    width: 70px;
+    margin-left: 2%;
+  }
+
+  .next {
+    background: none;
+    width: 70px;
+  }
+
+  
   .footer {
     padding: 8px;
     text-align: center;
@@ -474,25 +428,39 @@ h1, h2 {
     margin: 0;
   }
 
-  /* .next-project {
-    position: relative;
-    bottom: auto;
-    right: auto;
-    margin: 1.25rem auto;
-    text-align: center;
-  } */
 
-  .next-project {
+  .menu-toggle {
+    display: block;
+    font-size: 5vw;
+    padding: 0.2em 0.4em;
+  }
+
+
+  .side-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 220px;
+    height: 100vh;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: transform 0.3s ease, left 0.3s ease;
+  }
+
+  .side-nav.open {
+    left: 0;
+    transform: translateX(0);
+  }
+
+.next-project {
   position: fixed;   
   bottom: 3rem;
   right: 1rem;
-  opacity: 1;       
+  opacity: 1;        
   pointer-events: auto;
   transition: none; 
 }
-
-#footer-sentinel {
-  height: 1px;
 }
-}
-
