@@ -1,7 +1,4 @@
-// hero.js
 
-
-// // hero.js
 // document.addEventListener("DOMContentLoaded", function () {
   //   const goBtn = document.getElementById("go-projects");
   //   const body = document.body;
@@ -75,7 +72,6 @@ function updateColors() {
   texts.forEach(el => {
     el.style.color = textColor;
 
-    // Update shadows for neumorphic buttons
     // if (el.classList.contains("btn")) {
     //   const shadowDark = brightness > 150 ? "rgba(0,0,0,0.1)" : "rgba(0,0,0,0.3)";
     //   const shadowLight = brightness > 150 ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0.2)";
@@ -84,9 +80,9 @@ function updateColors() {
   });
 }
 
-// Run immediately and then update smoothly
+
 updateColors();
-setInterval(updateColors, 1000); // every second is smooth enough
+setInterval(updateColors, 1000);
 
 
 
