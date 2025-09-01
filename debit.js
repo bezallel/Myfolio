@@ -77,7 +77,7 @@ const observer = new IntersectionObserver(
 items.forEach((item) => observer.observe(item));
 
 
-const pdfItem = Array.from(items).find(i => i.querySelector('img')?.alt === 'Debit Note PDF');
+const pdfItem = Array.from(items).find(i => i.querySelector('img')?.alt === 'Debit Note');
 const impactItem = document.querySelector('.scroll-item.impact');
 
 if (pdfItem && impactItem && nextProject) {
