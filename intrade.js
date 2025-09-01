@@ -132,18 +132,47 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-window.addEventListener("scroll", () => {
-  const nextProject = document.querySelector(".next-project");
+document.addEventListener('DOMContentLoaded', () => {
+  const nextProject = document.querySelector('.next-project');
+  const sentinel = document.getElementById('footer-sentinel');
 
-  const scrollPosition = window.scrollY + window.innerHeight;
-  const pageHeight = document.documentElement.scrollHeight;
-
-  // Show only when fully at the bottom
-  if (scrollPosition >= pageHeight - 10) { // 10px buffer
-    nextProject.classList.add("show");
-  } else {
-    nextProject.classList.remove("show");
+  if (!nextProject || !sentinel) {
+    console.warn('Missing .next-project or #footer-sentinel');
+    return;
   }
+
+  let lastY = window.scrollY;
+
+  // IntersectionObserver watches the sentinel (in-flow element above footer)
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Sentinel visible → show button
+          nextProject.classList.add('show');
+        } else {
+          // Sentinel not visible → hide unless scrolling down further
+          // This ensures it disappears when scrolling back up
+          nextProject.classList.remove('show');
+        }
+      });
+    },
+    { root: null, threshold: 0.05 }
+  );
+
+  io.observe(sentinel);
+
+  // Optional: if you want “only hide when scrolling UP” behavior:
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const scrollingUp = y < lastY;
+
+    if (scrollingUp && !sentinel.getBoundingClientRect().top < window.innerHeight) {
+      nextProject.classList.remove('show');
+    }
+
+    lastY = y;
+  }, { passive: true });
 });
 
 
