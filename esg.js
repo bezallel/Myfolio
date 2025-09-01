@@ -14,19 +14,19 @@ function updateActiveLink() {
     subNavLinks.forEach(link => {
         link.classList.remove('active');
 
-       
+ 
         if (currentSection && link.getAttribute('href') === '#' + currentSection) {
             link.classList.add('active');
         }
 
-  
+    
         const linkPath = link.getAttribute('href');
         const currentPath = window.location.pathname.split('/').pop().split('?')[0];
 
         if (linkPath === currentPath) {
             link.classList.add('active');
 
-     
+
             const parentLi = link.closest('ul.sub-nav')?.closest('li');
             if (parentLi) {
                 parentLi.classList.add('active');
@@ -42,7 +42,10 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('DOMContentLoaded', updateActiveLink);
 
+
+
 window.addEventListener('scroll', updateActiveLink);
+
 
 window.addEventListener('DOMContentLoaded', updateActiveLink);
 
@@ -60,13 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const slides = Array.from(slider.children);
         let currentSlide = 0;
 
-        // Set initial positioning without transition
+        
         slides.forEach((slide, i) => {
             slide.style.position = 'absolute';
             slide.style.transform = (i === currentSlide) ? 'translateX(0)' : 'translateX(100%)';
             slide.style.opacity = (i === currentSlide) ? '1' : '0';
             slide.style.zIndex = (i === currentSlide) ? '5' : '1';
-            slide.style.transition = 'none'; // Disable transitions at start
+            slide.style.transition = 'none'; 
         });
 
         function showSlide(index) {
@@ -119,6 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showSlide(currentSlide);
         });
 
+
         setTimeout(() => {
             slides.forEach(slide => {
                 slide.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
@@ -126,6 +130,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 50);
     });
 });
+
+
+
+
+
 
 
 
@@ -140,14 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let lastY = window.scrollY;
 
+ 
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Sentinel visible → show button
           nextProject.classList.add('show');
         } else {
-        
           nextProject.classList.remove('show');
         }
       });
@@ -156,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
   io.observe(sentinel);
+
 
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
@@ -168,6 +177,20 @@ document.addEventListener('DOMContentLoaded', () => {
     lastY = y;
   }, { passive: true });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -189,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.querySelectorAll("a[href]").forEach(link => {
   link.addEventListener("click", e => {
-    // Only handle internal links
+   
     if (link.target === "_blank" || link.href.includes("#")) return;
 
     e.preventDefault();
