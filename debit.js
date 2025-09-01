@@ -43,14 +43,6 @@ window.addEventListener('DOMContentLoaded', updateActiveLink);
 
 
 
-
-
-
-
-
-
-
-// Sticky scroll text updater
 const items = document.querySelectorAll(".scroll-item");
 const headingEl = document.getElementById("case-heading");
 const textEl = document.getElementById("case-text");
