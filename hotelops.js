@@ -123,7 +123,7 @@ function injectMobileText() {
 
 
   document.querySelectorAll(".scroll-item").forEach(item => {
-    // don't inject twice
+
     if (item.dataset.mobileInjected === "1") return;
 
     const headingEl = document.createElement("h2");
@@ -138,14 +138,11 @@ function injectMobileText() {
     item.prepend(textEl);
     item.prepend(headingEl);
 
-    // mark injected
     item.dataset.mobileInjected = "1";
 
-    // debug (remove if not needed)
     // console.log("Injected mobile text for:", item.querySelector("img")?.alt || item);
   });
 
-  // hide sticky panel on mobile
   const stickyPanel = document.querySelector(".sticky-explanation");
   if (stickyPanel) stickyPanel.style.display = "none";
 }
