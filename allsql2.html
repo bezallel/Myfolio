@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+.sqlnb-body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.sqlnb-container {
+     width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Headings */
+.sqlnb-container h1 { text-align: center; margin: 30px 0 20px; color: #000; }
+.sqlnb-container h2 { margin: 20px 0 10px; color: #000; }
+
+/* Paragraphs */
+.sqlnb-container p {
+    margin: 10px 0;
+    color: #121111;
+    width: 100%;
+}
+
+/* Indented text */
+.sqlnb-container .sqlnb-indented { padding-left: 15px; }
+
+/* Code blocks */
+.sqlnb-container pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    overflow-x: auto;
+    box-shadow: inset 3px 3px 5px #888888;
+    box-sizing: border-box;
+}
+.sqlnb-container pre code { 
+  display: block; 
+  white-space: pre; 
+  overflow-x: auto; 
+  font-family: 'Courier New', monospace; 
+  color: #333; 
+}
+
+
+/* Images aligned under text */
+.sqlnb-container img { 
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 20px 0; 
+}
+
+/* Pages */
+.sqlnb-page { display: none; padding: 20px 0; color: white; }
+.sqlnb-page-active { display: block; }
+
+/* Navigation */
+.sqlnb-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+/* Buttons */
+.sqlnb-navigation-button {
+    min-width: 100px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2c3e50;
+    background: #e0e5ec;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 6px 6px 12px #c2c9d6, -6px -6px 12px #ffffff;
+}
+.sqlnb-navigation-button:hover { 
+    transform: translateY(-2px); 
+    box-shadow: 4px 4px 8px #c2c9d6, -4px -4px 8px #ffffff; 
+}
+.sqlnb-navigation-button:active { 
+    transform: translateY(1px); 
+    box-shadow: inset 4px 4px 8px #c2c9d6, inset -4px -4px 8px #ffffff; 
+}
+
+.sqlnb-sql-button { 
+    background: #4A90E2; 
+    color: #fff; 
+    font-weight: 600; 
+}
+
+.sqlnb-exit-button {
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    background: none;
+    border: 2px solid #fa0800;
+    color: #a8120d;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    }
+    .sqlnb-exit-button1 { 
+        display: none; 
+    }
+
+.sqlnb-exit-button:hover { 
+    background: #fa0800; 
+    color: #fff; 
+}
+
+
+/* Responsive tweaks */
+    /*@media (max-width: 768px) {
+        .sqlnb-container h1 { font-size: 1.5rem; }
+        .sqlnb-container h2 { font-size: 1.2rem; }
+        .sqlnb-container .sqlnb-indented { padding-left: 10px; }
+        .sqlnb-container pre { font-size: 0.85rem; }
+        .sqlnb-navigation-button { min-width: 80px; padding: 6px 12px; font-size: 13px; }*/
+
+
+
+
+
+    /* Responsive tweaks */
+@media (max-width: 768px) {
+    .sqlnb-container h1 { 
+      font-size: 1.5rem; 
+    }
+
+    .sqlnb-container h2 { 
+      font-size: 1.2rem; 
+    }
+
+    .sqlnb-container .sqlnb-indented { 
+      padding-left: 10px; 
+    }
+
+    .sqlnb-container pre { 
+      font-size: 0.85rem; 
+    }
+
+    .sqlnb-navigation-button { 
+      min-width: 80px; 
+      padding: 6px 12px; 
+      font-size: 13px;
+    }
+
+/*.sqlnb-exit-button { display: inline-block; }*/
+
+/* Small screens: max-width 768px */
+    
+    .sqlnb-page { 
+        display: none; 
+        padding: 20px 0; 
+        color: white; 
+    }
+
+    .sqlnb-page-active { 
+        display: block; 
+    }
+
+    .sqlnb-exit-button {
+    border-radius: 10px;
+    font-size: 10px;
+    display: none;
+}
+
+.sqlnb-exit-button1 { 
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    background: none;
+    border: 2px solid #fa0800;
+    color: #a8120d;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+   /* Images scale and align with text */
+img {
+    max-width: 95%;      /* scales down for smaller screens */
+    height: auto;         /* maintain aspect ratio */
+    display: block;
+    margin: 20px 0;       /* vertical spacing only */
+    margin-left: 4% !important;
+}
+
+/* Indented images (if you want them aligned with indented text) */
+.indented img {
+    margin-left: 15px;    /* aligns with .indented padding */
+}
+
+
+}
+    </style>
+</head>
+<body>
+    
+
+
+<!-- PAGE 2 ECONOMIC TRENDS STARTS HERE -->
+
+
+
+<div class="sqlnb-container">
+    <div id="page2" class="sqlnb-page-active">
+        <div class="sqlnb-navigation">
+    <button class="sqlnb-exit-button" onclick="window.location.href='debit.html'">Exit Notebook</button>
+    <button class="sqlnb-exit-button1" onclick="window.location.href='debit.html'">Exit</button>
+    <button class="sqlnb-navigation-button" onclick="window.location.href='allsql.html'">Bank Churn Analysis</button>
+    <button class="sqlnb-navigation-button" onclick="showPage('page2')">Economic Trends Analysis</button>
+    <button class="sqlnb-navigation-button sqlnb-sql-button" onclick="window.location.href='allpyth.html'">Go To Python Projects</button>
+</div>
+    <!-- Content for page 3 -->
+    <h1>Economic Trends and Market Analysis</h1>
+
+    <h2>
+        Introduction.
+    </h2>
+
+    <p>
+       An analysis of financial data to uncover trends and correlations and gain insights into trade dynamics, economic growth, and market capitalization over time.
+    </p>
+       <br>
+
+       <p>
+        <b>Features in the dataset </b>relevant to this project include:
+       </p>
+
+    <p>
+        <b>year:</b> The year for the recorded financial data.
+        <br>
+        <br>
+        <b>exporter:</b> The country or entity that exports goods or services.
+        <br>
+        <br>
+        <b>tradevalue:</b> The total monetary value of goods and services traded.
+        <br>
+        <br>
+        <b>tradeshare:</b> Total trade attributed to individual exporters.
+        <br>
+        <br>
+        <b>stmktcap:</b> Total market capitalization of stocks, reflecting the market value of all traded shares.
+        <br>
+        <br>
+        <b>RecessionAbroad:</b> Binary indicator (1 or 0) signifying whether there was a recession in foreign countries during the specified year.
+        <br>
+        <br>
+        <b>GDPgr:</b> The annual growth rate of gross domestic product, reflecting the economic performance of a country.
+        <br>
+        <br>
+        <b>loss:</b> Financial loss for an exporter or entity.
+        <br>
+        <br>
+        <b>loss2:</b>  An adjusted measure of financial loss, including adjustments like total sum for enhanced accuracy
+    </p>
+    
+
+    <h2>Data Preparation</h2>
+    <pre><code>
+        CREATE TABLE seql.finalysis AS
+        SELECT * FROM seql.finance1;
+    </code></pre>
+    <p>Create a new table named finalysis as a copy of the finance1 table.</p>
+
+    <h2>Total Trade Value by Year and Exporter</h2>
+    <pre><code>
+        SELECT year, exporter, SUM(tradevalue) AS total_trade_value
+        FROM seql.finalysis
+        GROUP BY year, exporter
+        ORDER BY year, total_trade_value DESC;
+    </code></pre>
+    <p>The total trade value for each year and exporter. <br> <br>The output shows the total trade value for each exporter, ordered by year, from highest to lowest and trade value within each year</p>
+
+    <img src="./images/img01.png" alt="Screenshot for the SELECT query" width="600" style="margin-left: 120px;">
+
+    <pre><code>
+        SELECT exporter, AVG(loss) AS avg_loss, SUM(loss2) AS total_losses,
+        COUNT(*) AS total_records
+        FROM seql.finalysis
+        GROUP BY exporter
+        ORDER BY avg_loss DESC
+        LIMIT 10;
+    </code></pre>
+
+    <p>Top 10 exporters with the highest average loss. This helps in identifying exporters with the most significant financial losses and assessing their financial risk.</p>
+    <img src="./images/img1.png" alt="Screenshot for the SELECT query" width="600" style="margin-left: 120px;">
+    
+
+    <pre><code>
+        SELECT AVG(tradevalue) AS avg_tradeval
+        FROM seql.finalysis;
+    </code></pre>
+    <p>
+       <b>Output: 1596554.9002235823</b>  
+    </p>
+    <p>
+        Average trade value in the dataset. 
+    </p>
+
+
+    <pre><code>
+        SELECT exporter, MAX(tradeshare) AS max_trade_share
+        FROM seql.finalysis
+        GROUP BY exporter
+        ORDER BY max_trade_share DESC
+        LIMIT 5;
+    </code></pre>
+    <p>
+        Top 5 exporters with the maximum trade share 
+    </p>
+    <img src="./images/img3.png" alt="Screenshot for the SELECT query" width="600" style="margin-left: 120px;">
+
+    <pre><code>
+        SELECT year
+        FROM seql.finalysis
+        WHERE <b>RecessionAbroad = 1</b>
+        GROUP BY year;
+    </code></pre>
+    <p>
+        <b>Output:</b>  <br>1983<br>
+        1992<br>
+        1985<br>
+        1986
+        
+     </p>
+    <p>
+        Years when a recession occurred.
+    </p>
+
+    <pre><code>
+        SELECT AVG(GDPgr) AS avg_GDP_growth_during_recession
+        FROM seql.finalysis
+        WHERE RecessionAbroad = 1;
+    </code></pre>
+    <p>
+        <b>Output: 1.19</b> 
+     </p>
+
+<p>
+    The average GDP growth during recessions.
+</p>
+
+
+    <pre><code>
+        SELECT exporter, AVG(loss) AS avg_loss
+        FROM seql.finalysis
+        GROUP BY exporter
+        ORDER BY avg_loss DESC
+        LIMIT 10;
+    </code></pre>
+    <p>
+        <b>Output:</b> 
+     </p>
+    <p>
+        The Average loss for each exporter. Top 10 exporters.
+    </p>
+
+    <img src="./images/img5.png" alt="Screenshot for the SELECT query" width="600" style="margin-left: 120px;">
+
+
+
+    <h2>Correlation Analysis</h2>
+    <pre><code>
+        SELECT 
+        (SUM((tradevalue - avg_tradevalue) * (stmktcap - avg_stmktcap)) / (COUNT(*) - 1)) /
+        (SQRT(SUM(POW(tradevalue - avg_tradevalue, 2)) / (COUNT(*) - 1)) * 
+        SQRT(SUM(POW(stmktcap - avg_stmktcap, 2)) / (COUNT(*) - 1))) AS trademrk_corr
+        FROM seql.finalysis,
+        (SELECT AVG(tradevalue) AS avg_tradevalue, AVG(stmktcap) AS avg_stmktcap FROM seql.finalysis) AS avg_vals;
+    </code></pre>
+
+
+    <p>
+        <b>Output: 0.1883602086608888</b>  
+     </p>
+
+    <p>Correlation between <b>trade value</b> and market capitalization. <br> 1 means it is a perfect positive correlation (as one variable increases, the other variable also increases). <br> -1 means its a perfect negative correlation (as one increases, the other  decreases) and  <br> 0 indicates no correlation between the variables. <br> <br> The output value of approximately 0.188 suggests a moderate positive correlation between trade value and stock market capitalization, indicating some relationship between the two variables. <br> <br> <b>Please note:</b> While correlation between trade value and stock market capitalization suggests a relationship, it doesn't imply direct causation</p>
+
+
+        <pre><code>
+        SELECT 
+        (SUM((GDPgr - avg_GDPgr) * (stmktcap - avg_stmktcap)) / (COUNT(*) - 1)) /
+        (SQRT(SUM(POW(GDPgr - avg_GDPgr, 2)) / (COUNT(*) - 1)) * 
+        SQRT(SUM(POW(stmktcap - avg_stmktcap, 2)) / (COUNT(*) - 1))) AS gdpmrk_corr
+        FROM seql.finalysis,
+        (SELECT AVG(GDPgr) AS avg_GDPgr, AVG(stmktcap) AS avg_stmktcap FROM seql.finalysis) AS avg_vals;
+        </code></pre>
+
+        <p>
+            <b>Output: 0.10641330973476827</b>  
+         </p>
+
+        <p>Correlation between <b>GDP growth</b>  and market capitalization. <br> <br> The value of 0.106 suggests a weak positive correlation between GDP growth and stock market capitalization, indicating a slight tendency for stock market capitalization to increase with GDP growth, but the relationship is not very strong.</p>
+            
+
+        <pre><code>
+        SELECT 
+        (SUM((GDPgr - avg_GDPgr) * (tradevalue - avg_tradevalue)) / (COUNT(*) - 1)) /
+        (SQRT(SUM(POW(GDPgr - avg_GDPgr, 2)) / (COUNT(*) - 1)) * 
+        SQRT(SUM(POW(tradevalue - avg_tradevalue, 2)) / (COUNT(*) - 1))) AS gdptrade_corr
+        FROM seql.finalysis,
+        (SELECT AVG(GDPgr) AS avg_GDPgr, AVG(tradevalue) AS avg_tradevalue FROM seql.finalysis) AS avg_vals;    
+        </code></pre>
+
+        <p>
+            <b>Output: -0.04532032598408335</b>  
+         </p>
+
+        <p>Correlation between GDP growth and <b>trade value</b> <br> <br> The value of -0.045 suggests a very weak negative correlation between GDP growth and trade value.</p>
+    
+
+    <h2>Average Trends</h2>
+    <pre><code>
+        SELECT DISTINCT year,
+        AVG(tradevalue) OVER (ORDER BY year) AS avg_trade_value_trend,
+        AVG(GDPgr) OVER (ORDER BY year) AS avg_gdp_growth_trend,
+        AVG(stmktcap) OVER (ORDER BY year) AS avg_market_trend
+        FROM seql.finalysis
+        ORDER BY year
+    </code></pre>
+    <p>Total averages of trade value, GDP growth, and stock market capitalization to show trends over time from 1980 to 2006.</p>
+
+    <img src="./images/img6.png" alt="Screenshot for the SELECT query" width="600" style="margin-left: 120px;">
+
+
+
+    <h2>Conclusion</h2>
+    <p>
+        The data reveals trends in trade value, GDP growth, and stock market size over time, offering insights into shifts and patterns within the financial sector and providing a deeper understanding of market dynamics.
+    </p>
+</div>
+  </div>
+
+<!-- PAGE 2 ECONOMIC TRENDS ENDS HERE -->
+
+
+
+</body>
+</html>

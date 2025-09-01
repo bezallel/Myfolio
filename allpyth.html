@@ -15125,25 +15125,57 @@ a.anchor-link {
 }
 
 /* Exit button – minimal pill style, offset properly */
+
 .exit-button {
     position: absolute;
-    left: 20px;
-    top: -10px; /* more breathing space */
+    left: 10px;
+    margin-top: 39px;
     background: none;
-    border: 2px solid #fa0800; /* subtle red outline */
+    border: 2px solid #fa0800;
     color: #a8120d;
     font-weight: 500;
     border-radius: 15px;
-    padding: 6px 16px;
+    padding: 6px 12px;
     font-size: 14px;
     cursor: pointer;
-    transition: all 0.2s ease;
-}
+    display: inline-block;
+    }
+    
+    .exit-button1 { 
+        display: none; 
+    }
+
 .exit-button:hover {
     background: #fa0800;
     color: #fff;
 }
 
+   
+
+
+
+@media (max-width: 768px){
+  .exit-button {
+    border-radius: 10px;
+    font-size: 10px;
+    display: none;
+}
+
+.exit-button1 { 
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    background: none;
+    border: 2px solid #fa0800;
+    color: #a8120d;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+}
 </style>
 
 <!-- EKO housing style begins here-->
@@ -22707,12 +22739,65 @@ a.anchor-link {
           color: #007bff;
       }
 
+      /* Exit button – minimal pill style, offset properly */
+.exit-button {
+    position: absolute;
+    left: 20px;
+    top: -10px; /* more breathing space */
+    background: none;
+    border: 2px solid #fa0800; /* subtle red outline */
+    color: #a8120d;
+    font-weight: 500;
+    border-radius: 15px;
+    padding: 6px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+ .exit-button1 { 
+        display: none; 
+    }
+.exit-button:hover {
+    background: #fa0800;
+    color: #fff;
+}
+
+   
+
+
+
+@media (max-width: 768px){
+  .exit-button {
+    border-radius: 10px;
+    font-size: 10px;
+    display: none;
+}
+
+.exit-button1 { 
+    position: absolute;
+    left: 10px;
+    top: 25px !important;
+    background: none;
+    border: 2px solid #fa0800;
+    color: #a8120d;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+}
+
   </style>
   
 </head>
 <body>
   <div id="navigation">
     <button class="exit-button" onclick="window.location.href='debit.html'">Exit Notebook</button>
+    <button class="exit-button1" onclick="window.location.href='debit.html'">Exit</button>
     <button class="navigation-button" onclick="showPage(1)">Predictive Modelling</button>
     <button class="navigation-button" onclick="showPage(2)">Time Series Forecasting</button>
      <button class="navigation-button sql-button" onclick="window.location.href='allsql.html'">Go To SQL Projects</button>
