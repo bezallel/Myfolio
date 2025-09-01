@@ -1,4 +1,4 @@
-// Select sub-nav links
+
 const subNavLinks = document.querySelectorAll('.sub-nav li a'); 
 const sections = document.querySelectorAll('main section');
 
@@ -14,23 +14,23 @@ function updateActiveLink() {
     subNavLinks.forEach(link => {
         link.classList.remove('active');
 
-        // Case 1: scrollspy (single-page)
+       
         if (currentSection && link.getAttribute('href') === '#' + currentSection) {
             link.classList.add('active');
         }
 
-        // Case 2: multi-page highlighting
+  
         const linkPath = link.getAttribute('href');
         const currentPath = window.location.pathname.split('/').pop().split('?')[0];
 
         if (linkPath === currentPath) {
             link.classList.add('active');
 
-            // ✅ highlight the parent top-level <li> and its main <a>
+     
             const parentLi = link.closest('ul.sub-nav')?.closest('li');
             if (parentLi) {
                 parentLi.classList.add('active');
-                const parentAnchor = parentLi.querySelector(':scope > a'); // only the direct child <a>
+                const parentAnchor = parentLi.querySelector(':scope > a'); 
                 if (parentAnchor) {
                     parentAnchor.classList.add('active-parent');
                 }
@@ -42,11 +42,8 @@ function updateActiveLink() {
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('DOMContentLoaded', updateActiveLink);
 
-
-// Run on scroll
 window.addEventListener('scroll', updateActiveLink);
 
-// Run immediately on page load
 window.addEventListener('DOMContentLoaded', updateActiveLink);
 
 
@@ -122,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
             showSlide(currentSlide);
         });
 
-        // Enable transitions after initial display
         setTimeout(() => {
             slides.forEach(slide => {
                 slide.style.transition = 'transform 1s ease-in-out, opacity 1s ease-in-out';
@@ -149,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let lastY = window.scrollY;
 
-  // IntersectionObserver watches the sentinel (in-flow element above footer)
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -157,8 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // Sentinel visible → show button
           nextProject.classList.add('show');
         } else {
-          // Sentinel not visible → hide unless scrolling down further
-          // This ensures it disappears when scrolling back up
+        
           nextProject.classList.remove('show');
         }
       });
@@ -168,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   io.observe(sentinel);
 
-  // Optional: if you want “only hide when scrolling UP” behavior:
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     const scrollingUp = y < lastY;
