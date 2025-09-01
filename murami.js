@@ -16,7 +16,6 @@ function updateActiveLink() {
     subNavLinks.forEach(link => {
         link.classList.remove('active');
 
-        // Case 1: in-page scrollspy highlight
         if (currentSection && link.getAttribute('href') === '#' + currentSection) {
             link.classList.add('active');
         }
@@ -117,7 +116,6 @@ if (pdfItem && impactItem && nextProject) {
 function injectMobileText() {
   if (window.innerWidth >= 768) return; 
 
-      // Inject the case title at the top (once)
   if (!document.querySelector(".scroll-item .case-title")) {
     const firstItem = document.querySelector(".scroll-item");
     const mobileTitle = document.createElement("h1");
@@ -130,7 +128,7 @@ function injectMobileText() {
   }
 
   document.querySelectorAll(".scroll-item").forEach(item => {
-    // don't inject twice
+ 
     if (item.dataset.mobileInjected === "1") return;
 
     const headingEl = document.createElement("h2");
