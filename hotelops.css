@@ -411,6 +411,7 @@ main {
   }
 
   .menu-toggle {
+    cursor: pointer;  
     position: fixed;
     top:1rem; 
     left: 15px;
