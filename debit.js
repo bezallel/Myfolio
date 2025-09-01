@@ -115,13 +115,8 @@ if (pdfItem && impactItem && nextProject) {
 
 
 
-
-
-
-
-// For mobile devices
 function injectMobileText() {
-  if (window.innerWidth >= 768) return; // only on mobile
+  if (window.innerWidth >= 768) return;
 
       // Inject the case title at the top (once)
   if (!document.querySelector(".scroll-item .case-title")) {
