@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/* General styles */
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
@@ -10,12 +9,12 @@ body {
   transition: opacity 3s ease;
 }
 
+
 body.fade-in {
   opacity: 1;
 }
 
 
-/* Side nav */
 .side-nav {
     position: fixed;
     top: 0;
@@ -58,7 +57,7 @@ body.fade-in {
 
 
 .side-nav ul li ul.sub-nav li a.active {
-    color: #ff6f61; 
+    color: #ff6f61;
     font-weight: 600;
 }
 
@@ -91,11 +90,14 @@ body.fade-in {
 
 
 
+
+
 h1, h2 {
     margin: 0 0 1rem 0;
     font-family: 'Cinzel', serif;
     color: #ffffff;
 }
+
 
 .project-overview {
     max-width: 1100px;
@@ -116,6 +118,7 @@ h1, h2 {
     font-size: 1rem;
     color: #ffffff;
 }
+
 
 .project-meta {
     list-style: none;
@@ -210,13 +213,16 @@ h1, h2 {
     background: #ff1f70;
 }
 .visit-btn + .demo-note {
-  display: inline-block;      
+  display: inline-block;       
   margin-left: 0.1rem;
   font-size: 0.9rem;
   color: #ff0000;
   font-weight: 600;
-  vertical-align: middle;     
+  vertical-align: middle;    
 }
+
+
+
 
 
 main {
@@ -229,7 +235,6 @@ main {
 
 
 
-/* Case Study */
 .project-case-study {
   margin-top: 4rem;
 }
@@ -242,15 +247,16 @@ main {
   align-items: flex-start;
 }
 
+
 .sticky-explanation {
   flex: 1 1 50%; 
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100vh; 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 2rem; 
+  padding-top: 2rem;
   box-sizing: border-box;
   max-width: 500px; 
 }
@@ -271,12 +277,12 @@ main {
 
 
 .sticky-scroll {
-  flex: 1 1 50%; 
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   position: relative;
-  max-width: 700px;
+  max-width: 700px; 
   margin-left: 0%;
 }
 
@@ -298,12 +304,13 @@ main {
 
 .scroll-item img,
 .scroll-item video {
-  max-height: 70vh; 
+  max-height: 70vh;
   max-width: 100%;
   border-radius: 12px;
   object-fit: contain;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5); 
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
+
 
 .sticky-explanation h2 {
   text-align: left;
@@ -329,7 +336,7 @@ main {
 .notice {
   font-weight: 700;         
   color: #ff6f61;            
-  font-size: 1.05rem;  
+  font-size: 1.05rem;        
 }
 
 
@@ -342,6 +349,7 @@ main {
 .fade.show {
   opacity: 1;
 }
+
 
 .scroll-item.impact {
   background: #0a0a0a; 
@@ -359,7 +367,7 @@ main {
 .impact-metrics h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #ff4081;
+  color: #ff4081; 
   margin-bottom: 2rem;
 }
 
@@ -385,7 +393,7 @@ main {
   right: 2rem;
   z-index: 20;
   opacity: 0;
-  pointer-events: none; 
+  pointer-events: none;
   transition: opacity 0.5s ease;
 }
 
@@ -453,7 +461,6 @@ main {
 
 
 
-
 @media (max-width: 767px) {
 
 .menu-toggle-bar {
@@ -463,8 +470,9 @@ main {
     width: 100vw;
     height: 65px;         
     background-color: #000;
-    z-index: 999; 
+    z-index: 999;         
   }
+
 
   .menu-toggle {
     position: fixed;
@@ -472,14 +480,14 @@ main {
     left: 15px;
     font-size: 6vw;
     padding: 0.2em 0.4em;
-    z-index: 2000;      
+    z-index: 2000;        
     display: block;
   }
 
   .side-nav {
     position: fixed;
     top: 0;
-    left: -250px; 
+    left: -250px; /* hidden off-screen */
     width: 250px;
     height: 100vh;
     background: #111;
@@ -506,6 +514,7 @@ main {
     display: none; 
   }
 
+
   .sticky-container { display: block; }
   .sticky-scroll { display: block; }
 
@@ -523,7 +532,7 @@ main {
   text-align: center;
   font-weight: 700;
   color: #ff1f70;
-  font-size: clamp(1.4rem, 5vw, 1.9rem);
+  font-size: clamp(1.4rem, 5vw, 1.9rem); 
   line-height: 1.3;
 }
 
@@ -531,7 +540,7 @@ main {
     margin: 0 0 0.75rem;
     text-align: center;
     line-height: 1.5;
-    color: #666; 
+    color: #666;
     font-size: 0.95rem;
   }
 
@@ -559,8 +568,8 @@ main {
 
   .notice {
   font-weight: 700;          
-  color: #ff6f61;            
-  font-size: 1.05rem;       
+  color: #ff6f61;           
+  font-size: 1.05rem;        
 }
 
 .project-description .disclaimer {
@@ -570,7 +579,7 @@ main {
 .sticky-explanation .case-title {
   font-size: clamp(1.6rem, 6vw, 2rem);
   font-weight: 700;
-  color: #ff1f70;
+  color: #ff1f70; 
   text-align: center;
   margin-bottom: 1rem;
 }
