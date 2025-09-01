@@ -416,7 +416,7 @@ main {
     left: 15px;
     font-size: 6vw;
     padding: 0.2em 0.4em;
-    z-index: 2000;       
+    z-index: 3000;      
     display: block;
   }
 
