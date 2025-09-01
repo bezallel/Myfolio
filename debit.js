@@ -5,7 +5,6 @@ const sections = document.querySelectorAll('main section');
 function updateActiveLink() {
     let currentSection = '';
 
- 
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         if (window.pageYOffset >= sectionTop - 100) {
@@ -16,13 +15,13 @@ function updateActiveLink() {
     subNavLinks.forEach(link => {
         link.classList.remove('active');
 
-        // Case 1: in-page scrollspy highlight
+
         if (currentSection && link.getAttribute('href') === '#' + currentSection) {
             link.classList.add('active');
         }
     });
 
- 
+
     const currentPath = window.location.pathname.split('/').pop().split('?')[0];
     if (currentPath === 'debit.html') {
         const parentLi = document.querySelector('.side-nav a[href="debit.html"]')?.closest('li');
@@ -31,14 +30,24 @@ function updateActiveLink() {
             parentAnchor?.classList.add('active-parent');
         }
 
+      
         if (!currentSection && subNavLinks.length > 0) {
             subNavLinks[0].classList.add('active');
         }
     }
 }
 
+
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('DOMContentLoaded', updateActiveLink);
+
+
+
+
+
+
+
+
 
 
 
@@ -68,7 +77,6 @@ const observer = new IntersectionObserver(
 items.forEach((item) => observer.observe(item));
 
 
-
 const pdfItem = Array.from(items).find(i => i.querySelector('img')?.alt === 'Debit Note PDF');
 const impactItem = document.querySelector('.scroll-item.impact');
 
@@ -76,7 +84,7 @@ if (pdfItem && impactItem && nextProject) {
   function updateNextProjectVisibility() {
     const pdfRect = pdfItem.getBoundingClientRect();
     const impactRect = impactItem.getBoundingClientRect();
-      
+
     const passedPDF = pdfRect.top <= window.innerHeight * 0.6;
     const beforeImpactEnd = impactRect.bottom > window.innerHeight * 0.2;
 
@@ -87,7 +95,6 @@ if (pdfItem && impactItem && nextProject) {
     }
   }
 
-
   updateNextProjectVisibility();
   window.addEventListener('scroll', updateNextProjectVisibility, { passive: true });
   window.addEventListener('resize', updateNextProjectVisibility);
@@ -95,6 +102,10 @@ if (pdfItem && impactItem && nextProject) {
     setTimeout(updateNextProjectVisibility, 200)
   );
 }
+
+
+
+
 
 
  const menuBtn = document.querySelector('.menu-toggle');
@@ -115,7 +126,8 @@ if (pdfItem && impactItem && nextProject) {
 
 
 function injectMobileText() {
-  if (window.innerWidth >= 768) return;
+  if (window.innerWidth >= 768) return; 
+
 
   if (!document.querySelector(".scroll-item .case-title")) {
     const firstItem = document.querySelector(".scroll-item");
@@ -130,7 +142,7 @@ function injectMobileText() {
 
 
   document.querySelectorAll(".scroll-item").forEach(item => {
-
+  
     if (item.dataset.mobileInjected === "1") return;
 
     const headingEl = document.createElement("h2");
@@ -142,23 +154,21 @@ function injectMobileText() {
     headingEl.textContent = item.dataset.heading || "";
     textEl.innerHTML = item.dataset.text || "";
 
+
     item.prepend(textEl);
     item.prepend(headingEl);
 
     item.dataset.mobileInjected = "1";
 
-
-    // console.log("Injected mobile text for:", item.querySelector("img")?.alt || item);
   });
 
-  const stickyPanel = document.querySelector(".sticky-explanation");
-  if (stickyPanel) stickyPanel.style.display = "none";
 }
+
 
 window.addEventListener("load", injectMobileText);
 window.addEventListener("orientationchange", () => setTimeout(injectMobileText, 300));
 window.addEventListener("resize", () => {
-  // small debounce
+
   clearTimeout(window.__mobileInjectTimer);
   window.__mobileInjectTimer = setTimeout(injectMobileText, 150);
 });
@@ -172,14 +182,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.querySelectorAll("a[href]").forEach(link => {
   link.addEventListener("click", e => {
-    // Only handle internal links
+    
     if (link.target === "_blank" || link.href.includes("#")) return;
 
     e.preventDefault();
-    document.body.classList.remove("fade-in"); 
+    document.body.classList.remove("fade-in");
     document.body.style.opacity = "0";
     setTimeout(() => {
       window.location.href = link.href;
     }, 200); 
   });
+});
+
+
+document.getElementById('download-excel').addEventListener('click', function(e) {
+  e.preventDefault();
+  const link = document.createElement('a');
+  link.href = 'medequip.xlsx';      
+  link.download = 'medequip.xlsx';  
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 });
