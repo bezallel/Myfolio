@@ -137,6 +137,18 @@ if (pdfItem && impactItem && nextProject) {
 function injectMobileText() {
   if (window.innerWidth >= 768) return; // only on mobile
 
+      // Inject the case title at the top (once)
+  if (!document.querySelector(".scroll-item .case-title")) {
+    const firstItem = document.querySelector(".scroll-item");
+    const mobileTitle = document.createElement("h1");
+    mobileTitle.className = "case-title";
+    mobileTitle.textContent = "Project Case Study:";
+    mobileTitle.style.fontSize = "clamp(1.6rem, 6vw, 2rem)";
+    mobileTitle.style.color = "#ffffffff";
+    mobileTitle.style.textAlign = "center";
+    firstItem.prepend(mobileTitle);
+  }
+
   document.querySelectorAll(".scroll-item").forEach(item => {
     // don't inject twice
     if (item.dataset.mobileInjected === "1") return;
