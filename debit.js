@@ -31,7 +31,6 @@ function updateActiveLink() {
             parentAnchor?.classList.add('active-parent');
         }
 
-        // If no section yet (top of page), default to first sub-nav
         if (!currentSection && subNavLinks.length > 0) {
             subNavLinks[0].classList.add('active');
         }
@@ -59,7 +58,7 @@ const observer = new IntersectionObserver(
       entry.target.classList.add("active");
 
       if (headingEl) headingEl.textContent = heading;
-      if (textEl) textEl.innerHTML = text;   // allow <br> to render
+      if (textEl) textEl.innerHTML = text;   
     });
   },
   {
@@ -118,7 +117,6 @@ if (pdfItem && impactItem && nextProject) {
 function injectMobileText() {
   if (window.innerWidth >= 768) return;
 
-      // Inject the case title at the top (once)
   if (!document.querySelector(".scroll-item .case-title")) {
     const firstItem = document.querySelector(".scroll-item");
     const mobileTitle = document.createElement("h1");
@@ -132,7 +130,7 @@ function injectMobileText() {
 
 
   document.querySelectorAll(".scroll-item").forEach(item => {
-    // don't inject twice
+
     if (item.dataset.mobileInjected === "1") return;
 
     const headingEl = document.createElement("h2");
@@ -147,19 +145,16 @@ function injectMobileText() {
     item.prepend(textEl);
     item.prepend(headingEl);
 
-    // mark injected
     item.dataset.mobileInjected = "1";
 
-    // debug (remove if not needed)
+
     // console.log("Injected mobile text for:", item.querySelector("img")?.alt || item);
   });
 
-  // hide sticky panel on mobile
   const stickyPanel = document.querySelector(".sticky-explanation");
   if (stickyPanel) stickyPanel.style.display = "none";
 }
 
-// run on load (ensures images/layout exist) and on resize/orientation
 window.addEventListener("load", injectMobileText);
 window.addEventListener("orientationchange", () => setTimeout(injectMobileText, 300));
 window.addEventListener("resize", () => {
@@ -181,10 +176,10 @@ document.querySelectorAll("a[href]").forEach(link => {
     if (link.target === "_blank" || link.href.includes("#")) return;
 
     e.preventDefault();
-    document.body.classList.remove("fade-in"); // triggers fade-out
+    document.body.classList.remove("fade-in"); 
     document.body.style.opacity = "0";
     setTimeout(() => {
       window.location.href = link.href;
-    }, 200); // match transition duration
+    }, 200); 
   });
 });
