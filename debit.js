@@ -68,7 +68,7 @@ const observer = new IntersectionObserver(
       entry.target.classList.add("active");
 
       if (headingEl) headingEl.textContent = heading;
-      if (textEl) textEl.textContent = text;
+      if (textEl) textEl.innerHTML = text;   // allow <br> to render
     });
   },
   {
@@ -76,6 +76,8 @@ const observer = new IntersectionObserver(
   }
 );
 items.forEach((item) => observer.observe(item));
+
+
 
 // --- Handle Next Project button ---
 const pdfItem = Array.from(items).find(i => i.querySelector('img')?.alt === 'Debit Note PDF');
