@@ -792,7 +792,7 @@ body:not(.dark-theme) {
     }
 }
 
-@media screen and (min-height: 801px) and (max-height: 850px){
+@media screen and (min-height: 801px) and (max-height: 890px){
 .resume{
     margin-left: 1.8% !important;
      width: 100% !important;              
