@@ -673,38 +673,6 @@ body:not(.dark-theme) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-@media (max-width: 767px) {
-
- 
-
-  
-
- 
-
-
-  
-}
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 320px){
     .nav__list{
         grid-template-columns: repeat(2, 1fr);
