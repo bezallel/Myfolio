@@ -543,6 +543,22 @@ main {
     margin-bottom: 1rem;
   }
 
+    
+  /* .impact-metrics h2 {
+  font-size: 2.5rem;
+}
+
+.impact-metrics .metric {
+  font-size: .9rem;
+} */
+.impact-metrics .metric span {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  display: block;
+}
+
+
 }
 
 
