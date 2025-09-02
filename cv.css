@@ -567,38 +567,16 @@ body:not(.dark-theme) {
 
 
 
-@media screen and (min-height: 932px) and (max-height: 932px){
-.resume{
-    margin-left: 3.4% !important;
-     width: 100% !important;              
-    max-width: 370px !important;  
-}
-}
 
-@media screen and (min-height: 956px) and (max-height: 956px){
-.resume{
-    margin-left: 2.7% !important;
-     width: 100% !important;              
-    max-width: 347px !important;  
-}
-}
 
-@media screen and (min-height: 874px) and (max-height: 874px){
-.resume{
-    margin-left: 2.7% !important;
-     width: 100% !important;              
-    max-width: 350px !important;  
-}
-}
 
-@media screen and (min-height: 852px) and (max-height: 852px){
-.resume{
-    margin-left: 1.6% !important;
-     width: 100% !important;              
-    max-width: 350px !important;  
-}
-}
 
+@media screen and (max-width: 320px){
+    .nav__list{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem .5rem;
+    }
+}
 
 
 @media screen and (min-height: 360px) and (max-height: 360px){
@@ -627,7 +605,9 @@ body:not(.dark-theme) {
 }
 
 
-@media screen and (max-width: 767px){
+
+
+@media screen and (max-width: 768px){
    .resume{
         /* display: grid; */
         width: 100%;              
@@ -716,13 +696,54 @@ body:not(.dark-theme) {
 }
 }
 
-@media screen and (max-width: 320px){
-    .nav__list{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem .5rem;
-    }
+
+@media screen and (min-height: 732px) and (max-height: 810px){
+.resume{
+    margin-left: 1.8% !important;
+     width: 100% !important;              
+    max-width: 370px !important;  
+}
 }
 
+@media screen and (min-height: 852px) and (max-height: 873px){
+.resume{
+    margin-left: 1.6% !important;
+     width: 100% !important;              
+    max-width: 350px !important;  
+}
+}
+
+@media screen and (min-height: 874px) and (max-height: 874px){
+.resume{
+    margin-left: 2.7% !important;
+     width: 100% !important;              
+    max-width: 350px !important;  
+}
+}
+
+@media screen and (min-height: 912px) and (max-height: 918px){
+.resume{
+    margin-left: 1.5% !important;
+     width: 100% !important;              
+    max-width: 370px !important;  
+}
+}
+
+@media screen and (min-height: 932px) and (max-height: 955px){
+.resume{
+    margin-left: 3.4% !important;
+     width: 100% !important;              
+    max-width: 370px !important;  
+}
+}
+
+@media screen and (min-height: 956px) and (max-height: 956px){
+.resume{
+    margin-left: 2.7% !important;
+     width: 100% !important;              
+    max-width: 347px !important;  
+}
+}
 
 @media screen and (min-width: 968px){
     body{
