@@ -89,7 +89,7 @@ body.scale-cv{
     --smaller-font-size: .688rem;
     }
 
-/* ==============gpt download resume================ */
+
 
 .download-container {
     position: relative;
@@ -115,13 +115,13 @@ body.scale-cv{
     background-color: #f1f1f1;
 }
 
-/* Show the dropdown on hover */
+
 .download-container:hover .dropdown {
     display: block;
 }
 
 
-/* ==============gpt download resume================ */
+
 
 :root{
     --theme-color: #70fffd;
@@ -232,9 +232,9 @@ a{
 
 
 .bd-container {
-    max-width: 950px; /* Adjust to your desired width */
-    margin: 0 auto; /* Center align the container horizontally */
-    padding: 0 1rem; /* Add padding if needed */
+    max-width: 950px;
+    margin: 0 auto; 
+    padding: 0 1rem;
 }
 
 .bd-grid{
@@ -260,24 +260,6 @@ a{
     align-items: center;
 }
 
-@media screen and (max-width: 968px){
-    .nav__menu{
-        position: fixed;
-        bottom: -100%;
-        left: 0;
-        width: 100%;
-        padding: 2rem 1.5rem;
-        background-color: var(--body-color);
-        box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
-        border-radius: 1rem 1rem 0 0;
-        z-index: var(--z-fixed);
-        transition: .3s;
-    }
-
-    .skills__content {
-        grid-template-columns: 1fr; /* Stack items vertically on smaller screens */
-    }
-}
 
 
 .nav__logo,
@@ -409,6 +391,7 @@ a{
     margin-right: .25rem;
 }
 
+
 .profile__description{
     text-align: center;
     font-weight: normal; 
@@ -419,12 +402,12 @@ a{
     display: flex;
 }
 
-.education__time,
+/* .education__time,
 .experience__time{
-    /* padding-right: 1rem; */
-}
+    padding-right: 1rem;
+} */
 
- 
+
 .experience__description {
     font-weight: normal; 
     line-height: 1.5rem;
@@ -443,10 +426,6 @@ br{
 }
 
 
-
-
-
-
 .experience-list li {
   margin-bottom: 0.75rem;
   line-height: 1.5rem;
@@ -454,34 +433,11 @@ br{
 
 .sub-list {
   margin-top: 0.5rem;
-  margin-left: 1.5rem; /* indent */
-  color: var(--newtext--); /* faded color */
+  margin-left: 1.5rem; 
+  color: var(--newtext--); 
   font-size: var(--small-font-size);
-  list-style-type: disc; /* or circle/square if you prefer */
+  list-style-type: disc; 
 }
-
-
-
-
-
-
-/* .education__rounder{
-    position: relative;
-    display: block;
-    width: 16px;
-    height: 16px;
-    background-color: var(--text-color);
-    border-radius: 50%;
-    margin-top: .25rem;
-} */
-
-/* .education__line{
-    display: block;
-    width: 2px;
-    height: 110%;
-    background-color: var(--text-color-light);
-    transform: translate(7px, 0);
-} */
 
 hr{
     width: 80%;
@@ -561,6 +517,194 @@ hr{
 }
 
 
+
+main .resume {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10%;
+     /* display: grid; */
+     grid-template-columns: .5fr 1fr;
+    background-color: var(--container-color);
+    box-shadow: 0 0 8px rgba(13, 12, 12, .15);
+}
+
+.section {
+    padding: 1.5rem 2rem; 
+}
+
+
+.home, .profile, .education, .experience, .skills, .certificate {
+    margin: 1rem 2rem;
+}
+
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -6%;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background: var(--popup-overlay-bg); 
+}
+
+.popup-content {
+    background: var(--popup-content-bg); 
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.popup-button {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background: #70dbff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.popup-button:hover {
+    background: #5dccc8;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--close-popup-color); 
+}
+
+/* Dark theme variables */
+body.dark-theme {
+    --popup-overlay-bg: rgba(0, 0, 0, 0.8); 
+    --popup-content-bg: #212121;
+    --close-popup-color: #fff; 
+}
+
+/* Light theme variables */
+body:not(.dark-theme) {
+    --popup-overlay-bg: rgba(0, 0, 0, 0.5); 
+    --popup-content-bg: #fff; 
+    --close-popup-color: #000; 
+}
+
+
+
+
+@media (max-width: 767px) {
+
+    .resume {
+    width: 100%;              
+    max-width: 350px;        
+    border-radius: 20px;
+    margin: 0 auto;           
+  }
+
+    .experience__title{
+        font-size: 1rem;
+    }
+
+    .section-title{
+        font-size: 1.1rem;
+    }
+
+  .experience.section {
+    width: 100%;             
+    max-width: 370px;          
+    margin: 0;
+    padding: 0.75rem 1rem;     
+    box-sizing: border-box;
+  }
+
+  .experience__container {
+    width: 100%;
+    max-width: 100%;          
+    margin: 0;
+    padding: 0;
+    display: block;          
+  }
+
+  .experience__data {
+    width: 100%;
+    /* max-width: 100%; */
+    margin: 0 0 2rem 0;      
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .nav__menu{
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    background-color: var(--body-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    border-radius: 1rem 1rem 0 0;
+    z-index: var(--z-fixed);
+    transition: .3s;
+    }
+
+  .skills.section {
+    width: 100%;             
+    max-width: 340px;         
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  .certificate.section{
+    width: 100%;             
+    max-width: 340px;         
+    padding: 1rem;
+    margin: 0 auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+
+ 
+
+  
+
+ 
+
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 320px){
     .nav__list{
         grid-template-columns: repeat(2, 1fr);
@@ -595,10 +739,10 @@ hr{
         background-color: var(--container-color-light);
     }
 
-    .resume__left,
+    /* .resume__left,
     .resume__right{
         padding: 0 1.5rem;
-    }
+    } */
 
     .section-title,
     .profile__description{
@@ -615,82 +759,3 @@ hr{
 
 }
 
-
-
-main .resume {
-    display: flex;
-    flex-direction: column;
-    margin-right: 10%;
-}
-
-.section {
-    padding: 1.5rem 2rem; /* Increase horizontal padding */
-}
-
-/* Adjust specific sections if necessary */
-.home, .profile, .education, .experience, .skills, .certificate {
-    margin: 1rem 2rem; /* Add margins if sections are too close to the edges */
-}
-
-/* Pop-up overlay */
-/* Base pop-up overlay and content */
-.popup-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: -6%;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    background: var(--popup-overlay-bg); /* Background color variable */
-}
-
-.popup-content {
-    background: var(--popup-content-bg); /* Background color variable */
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.popup-button {
-    display: block;
-    margin: 10px 0;
-    padding: 10px;
-    background: #70dbff;
-    color: #000;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.popup-button:hover {
-    background: #5dccc8;
-}
-
-.close-popup {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--close-popup-color); /* Color variable */
-}
-
-/* Dark theme variables */
-body.dark-theme {
-    --popup-overlay-bg: rgba(0, 0, 0, 0.8); /* Darker background for dark theme */
-    --popup-content-bg: #212121; /* Dark background for content */
-    --close-popup-color: #fff; /* Light color for close button in dark theme */
-}
-
-/* Light theme variables */
-body:not(.dark-theme) {
-    --popup-overlay-bg: rgba(0, 0, 0, 0.5); /* Lighter background for light theme */
-    --popup-content-bg: #fff; /* Light background for content */
-    --close-popup-color: #000; /* Dark color for close button in light theme */
-}
