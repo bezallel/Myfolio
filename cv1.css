@@ -601,9 +601,24 @@ body:not(.dark-theme) {
 }
 
 
+
+.project-desc {
+  margin-top: 0.3rem; 
+  margin-bottom: 1rem; 
+}
+.skill-desc {
+  margin-top: 0.3rem; 
+  margin-bottom: 1rem; 
+}
+.lead-desc {
+  margin-top: 0.3rem; 
+  margin-bottom: 1rem; 
+}
+
+
 .project-link {
   text-decoration: none;
-  color: black;  
+  color: var(--title-color);  
   font-weight: bold;
   transition: color 0.2s ease; 
 }
@@ -617,13 +632,13 @@ body:not(.dark-theme) {
   content: " ↗";
   font-size: 0.9em;
   margin-left: 0.2rem;
-  color: black;
+  color: var(--title-color); 
 }
 
 
 .pub-link {
   text-decoration: none;
-  color: black;   
+  color: var(--title-color);   
   font-weight: 500;        
   transition: color 0.2s ease;
 }
@@ -635,7 +650,7 @@ body:not(.dark-theme) {
 
 .cert-link {
   text-decoration: none;
-  color: black;            
+  color: var(--title-color);           
   transition: color 0.2s ease;
 }
 
