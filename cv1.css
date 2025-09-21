@@ -425,8 +425,8 @@ a{
 }
 
 .sub-list {
-  list-style-type: disc; /* nested bullets */
-  margin-left: 2rem;       /* indentation */
+  list-style-type: disc; 
+  margin-left: 2rem;       
   margin-top: 0.5rem;
 }
 
@@ -587,36 +587,59 @@ body:not(.dark-theme) {
 
 
 
-/* Ensure spacing between title and description */
 .project-desc {
-  margin-top: 0.3rem; /* adjust as needed */
-  margin-bottom: 1rem; /* space between projects */
+  margin-top: 0.3rem; 
+  margin-bottom: 1rem; 
 }
 .skill-desc {
-  margin-top: 0.3rem; /* adjust as needed */
-  margin-bottom: 1rem; /* space between projects */
+  margin-top: 0.3rem; 
+  margin-bottom: 1rem; 
 }
 
-/* Link styling */
+
 .project-link {
   text-decoration: none;
-  color: black;  /* default color */
+  color: black;  
   font-weight: bold;
-  transition: color 0.2s ease; /* smooth transition */
+  transition: color 0.2s ease; 
 }
 
 .project-link:hover {
-  color: #0056b3; /* elegant deep blue, adjust as needed */
-  text-decoration: none; /* keep clean, no underline */
+  color: #0056b3; 
+  text-decoration: none; 
 }
 
-/* Arrow styling */
 .project-link::after {
   content: " ↗";
   font-size: 0.9em;
   margin-left: 0.2rem;
   color: black;
 }
+
+
+.pub-link {
+  text-decoration: none;
+  color: black;   
+  font-weight: 500;        
+  transition: color 0.2s ease;
+}
+
+.pub-link:hover {
+  color: #0056b3;          
+}
+
+
+.cert-link {
+  text-decoration: none;
+  color: black;            
+  transition: color 0.2s ease;
+}
+
+.cert-link:hover {
+  color: #0056b3;
+}
+
+
 
 
 
@@ -812,7 +835,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;   
 }
 
   .experience__data {
@@ -865,7 +888,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;  
 }
 }
 
@@ -896,7 +919,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;
 }
 }
 
@@ -926,7 +949,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;
 }
 }
 
@@ -956,7 +979,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;   
 }
 }
 
@@ -986,7 +1009,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;
 }
 }
 
@@ -1016,7 +1039,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;   
 }
 }
 
@@ -1047,7 +1070,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;  
 }
 }
 
@@ -1077,7 +1100,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem !important;   /* shrink gap between jobs */
+  margin-bottom: -1rem !important;
 }
 }
 
@@ -1147,7 +1170,7 @@ body:not(.dark-theme) {
   }
 
   .experience__content {
-  margin-bottom: -1rem;   /* shrink gap between jobs */
+  margin-bottom: -1rem;
 }
 
 }
