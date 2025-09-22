@@ -609,7 +609,7 @@ body:not(.dark-theme) {
 }
 
 .project-link:hover {
-  color: #70fffd; 
+  color: #0800ff; 
   text-decoration: none; 
 }
 
@@ -629,7 +629,7 @@ body:not(.dark-theme) {
 }
 
 .pub-link:hover {
-  color: #70fffd;          
+  color: #0800ff;          
 }
 
 
@@ -640,7 +640,7 @@ body:not(.dark-theme) {
 }
 
 .cert-link:hover {
-  color: #70fffd;
+  color: #0800ff;
 }
 
 .contact-link {
@@ -651,7 +651,7 @@ body:not(.dark-theme) {
 }
 
 .contact-link:hover {
-  color: #70fffd;              /* highlight color */
+  color: #0800ff;              /* highlight color */
 }
 
 
