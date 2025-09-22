@@ -587,7 +587,6 @@ body:not(.dark-theme) {
 
 
 
-
 .project-desc {
   margin-top: 0.3rem; 
   margin-bottom: 1rem; 
@@ -600,22 +599,6 @@ body:not(.dark-theme) {
   margin-top: 0.3rem; 
   margin-bottom: 1rem; 
 }
-
-
-
-.project-desc {
-  margin-top: 0.3rem; 
-  margin-bottom: 1rem; 
-}
-.skill-desc {
-  margin-top: 0.3rem; 
-  margin-bottom: 1rem; 
-}
-.lead-desc {
-  margin-top: 0.3rem; 
-  margin-bottom: 1rem; 
-}
-
 
 
 .project-link {
@@ -626,7 +609,7 @@ body:not(.dark-theme) {
 }
 
 .project-link:hover {
-  color: #0056b3; 
+  color: #70fffd; 
   text-decoration: none; 
 }
 
@@ -646,7 +629,7 @@ body:not(.dark-theme) {
 }
 
 .pub-link:hover {
-  color: #0056b3;          
+  color: #70fffd;          
 }
 
 
@@ -657,8 +640,20 @@ body:not(.dark-theme) {
 }
 
 .cert-link:hover {
-  color: #0056b3;
+  color: #70fffd;
 }
+
+.contact-link {
+  text-decoration: none;
+  color: var(--link--);    /* adapts to theme */
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  color: #70fffd;              /* highlight color */
+}
+
 
 
 
