@@ -645,14 +645,15 @@ body:not(.dark-theme) {
 
 .contact-link {
   text-decoration: none;
-  color: var(--link--);    /* adapts to theme */
+  color: var(--link--);    
   transition: color 0.2s ease;
   font-weight: 500;
 }
 
 .contact-link:hover {
-  color: #0800ff;              /* highlight color */
+  color: #0800ff;             
 }
+
 
 
 
