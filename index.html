@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="debit.css">
-    <title>Debit Note Case Study</title>
+    <title>Isolde</title>
 </head>
 <body>
 <div class="menu-toggle-bar"></div> 
@@ -13,12 +13,13 @@
     <ul>
         <li><a href="hero.html">Home</a></li>
         <li class="active">
-        <a href="debit.html">Debit Note</a>
+        <a href="isolde.html">Isoldé</a>
         <ul class="sub-nav">
         <li><a href="#overview">Overview</a></li>
         <li><a href="#case-study">Case Study</a></li>
       </ul>
       </li>
+      <li><a href="debit.html">Debit Note</a></li>
         <li><a href="hotelops.html">Hotel Ops</a></li>
         <li><a href="murami.html">Murami</a></li>
         <li><a href="esg.html">ESG/INT TRADE</a></li>
@@ -29,86 +30,109 @@
 
 
 <main>
+  <!-- Project Overview Section -->
   <section id="overview" class="project-overview">
-    <h2>Vendor Debit Note Automation</h2>
+    <h2>ISOLDE – Intelligent Simulation of Load Distribution in Emergencies</h2>
 
     <ul class="project-meta">
-      <li><strong>Category:</strong> Supply chain / operations</li>
-      <li><strong>Technical Skills:</strong> Excel modeling, HTML/CSS/JS, automation, PDF generation</li>
+      <li><strong>Category:</strong> Energy resilience / grid simulation</li>
+      <li><strong>Technical Skills:</strong> Python (Flask), data modeling, real-time UI, Chart.js</li>
     </ul>
 
     <div class="project-description">
-      <p><strong>Overview:</strong> Developed a system to automatically generate debit notes for overcharged suppliers at <strong>Triple E Diagnostics</strong>.</p>
-      <p><strong>Impact:</strong> Reduced reconciliation errors and delivered measurable financial impact, including revenue savings of <strong>over 20%</strong> and saving 120+ hours per month in procurement operations.</p>
-    </div>
+      <p><strong>Motivation:</strong>  
+      ISOLDE was inspired by the real-world impact of <strong>Storm Éowyn</strong>, which caused widespread power outages across Ireland. During the storm, **hundreds of thousands of customers lost electricity**, and ESB Networks reported “unprecedented” grid damage. :contentReference[oaicite:0]{index=0}  
+      This event demonstrated how critical it is to understand how stored energy could be deployed during such infrastructure failures.</p>
 
-    <div class="project-download">
-      <p><strong>Download Project File:</strong></p>
-      <a href="#" class="btn download-btn" id="download-excel">medequip.xlsx</a>
-    </div>
+      <p><strong>Overview:</strong>  
+      ISOLDE is a real-time energy distribution simulator that models how a micro-grid or community battery system behaves in response to major outages. It visualizes how electricity is drawn throughout the day, how battery storage builds up when demand is low, and how that stored energy is distributed to predefined critical areas once grid supply fails.</p>
 
+      <p><strong>How It Works:</strong>  
+      The backend (Flask) ingests load-profile data and geographic station metadata, then provides endpoints (`/data`, `/stations`) for the frontend. The frontend animates:  
+      - A Chart.js line graph showing original load, shifted load, served load, and battery supply.  
+      - A battery state-of-charge widget.  
+      - A distribution panel listing the names of areas (stations) and how much stored energy is being allocated to each in real time, once Island Mode is triggered.</p>
+
+      <p><strong>Impact:</strong>  
+      By simulating emergency power distribution, ISOLDE helps stakeholders — utility operators, planners, communities — understand how to better prepare for future storms. It offers **insight into resilience**, helping explore questions like: “Which areas should get priority?”, “How much battery capacity is needed?”, and “How long can stored power realistically last?”</p>
+
+      <p class="disclaimer"><em>Disclaimer:</em> This is a demonstration project. While inspired by real events, ISOLDE uses synthetic or publicly available data and is not a live operational system.</p>
+    </div>
+ 
 
     <video autoplay muted loop class="app-video">
-      <source src="./Videos/adeno.mp4" type="video/mp4">
+      <source src="./Videos/isolde.mp4" type="video/mp4">
     </video>
 
-    <a href="https://medinote-rmi5.onrender.com" target="_blank" class="visit-btn">
-      Visit DebitNote Demo
+    <a href="https://isolde-zech.onrender.com" target="_blank" class="visit-btn">
+      Visit Isoldé Demo
     </a>
-     <span class="demo-note"> (Please download the Excel file above first.)</span>
   </section>
 
 
+    <!-- Case Study Section -->
 <section id="case-study" class="project-case-study">
     <div class="sticky-container">
     <!-- Sticky text panel -->
     <div class="sticky-explanation">
-      <h1 class="case-title">Project Case Study</h1>
+      <h1 class="case-title">Project Case Study:</h1>
       <h2 id="case-heading" class="fade show"></h2>
       <p id="case-text" class="fade show"></p>
     </div>
 
-   
-    <div class="sticky-scroll">
-      <div class="scroll-item" data-heading="Problem"
-           data-text="Discrepancies between planned orders, received quantities, and invoiced amounts led to supplier overcharging, missed recoveries, and labor-intensive manual reconciliation. <br>
-            <span class='notice'>Objective:</span> Develop a system to automatically detect overcharging, calculate debit amounts, generate debit notes, and provide analytics on savings, leakage, and supplier performance.">
-        <img src="./Images/moneyleak.jpg" alt="Dataset discrepancies">
-      </div>
+    <!-- Scrollable images -->
+    <!-- Scrollable images for ISOLDE Case Study -->
+<div class="sticky-scroll">
 
-      <div class="scroll-item" data-heading="Step 1: Inventory Analysis"
-           data-text="Compares planned units (green), invoiced units, and received units.
-            Discrepancies where invoiced amounts exceed planned or received quantities are flagged in red.">
-        <img src="./Images/adatashot.png" alt="Dataset discrepancies">
-      </div>
+  <!-- PROBLEM -->
+  <div class="scroll-item" 
+       data-heading="Problem: Extreme Grid Vulnerability"
+       data-text="Storm Éowyn caused severe, widespread outages across Ireland, leaving hundreds of thousands without electricity. 
+       The event exposed how fragile distribution networks become during climate-intensified storms.<br><br>
+       <span class='notice'>Objective:</span> Create a real-time simulation tool that models how stored energy can be accumulated during off-peak hours and redistributed to critical areas when the grid fails—demonstrating a proof-of-concept micro-grid resilience system.">
+    <img src="./Images/eowyn.jpg" alt="Storm Eowyn Damage">
+  </div>
 
-      <div class="scroll-item" data-heading="Step 2: Analytics and Insights"
-           data-text="Total Leakage vs Total Savings: Overcharged amounts vs recovered amounts; savings exceed leakage.
-          Supplier Performance: Highlights habitual defaulters by comparing leakage vs savings per supplier.">
-        <img src="./Images/aaatotasup.png" alt="Leakage vs Savings">
-      </div>
+  <!-- STEP 1: MODELING LOAD + FORECASTING -->
+  <div class="scroll-item" 
+       data-heading="Step 1: Forecasting and Load Modeling"
+       data-text="The system begins by modeling electricity demand using historical load data. 
+       A Prophet forecasting model is trained to understand daily and weekly patterns, allowing ISOLDE to estimate future consumption and identify high-demand periods.<br><br>
+       During these peaks, a portion of the load is classified as 'flexible' and safely shifted; creating predictable opportunities for controlled battery charging.">
+    <img src="./Images/code.png" alt="Forecasting and Load Model">
+  </div>
 
-      <div class="scroll-item" data-heading="Step 3: System Interface and Upload"
-           data-text="Web-based system (HTML, CSS, JS) allows Excel uploads.Automatically calculates debit amounts and organizes results by supplier and invoice.<br>
-           <span class='notice'>Impact:</span> Reduces manual effort, prevents errors, and centralizes debit calculations.">
-        <!-- <img src="./Images/adebi1.png" alt="App Homepage"> -->
-         <video autoplay muted loop class="appy-video">
-          <source src="./Videos/adebi01.mp4" type="video/mp4">
-         </video>
-      </div>
+  <!-- STEP 2: THE CODE (BATTERY + STORM SIMULATION) -->
+  <div class="scroll-item" 
+       data-heading="Step 2: Battery Charging and Storm Simulation"
+       data-text="ISOLDE simulates how a community battery behaves before, during, and after a storm. 
+       Stored energy builds during low-demand hours. When an outage window is detected, the battery switches into island mode and begins powering the system.">
+    <img src="./Images/isbat.png" alt="Storm Simulation Code">
+  </div>
 
-      <div class="scroll-item" data-heading="Step 4: Automated Debit Note Generation"
-           data-text="Generates debit notes automatically, including overcharge amounts, supplier details, and invoice references.
-          Supports PDF export for professional documentation.">
-        <img src="./Images/adebi3.png" alt="Dataset Upload">
-      </div>
+  <!-- STEP 3: UI — CHARGING PHASE -->
+  <div class="scroll-item" 
+       data-heading="Step 3: Real-Time Charging & Load Distribution Interface"
+       data-text="The interface visualizes multiple layers of the system in real time:
+       <br>• Original load - Total electricity demand at the moment  
+       <br>• Flexible load - Portion of electricity that can be shifted to off-peak times  
+       <br>• Served load during demand  
+       <br>• Battery state-of-charge, growing during off-peak periods<br><br>
+       Users can observe energy storage accumulating as demand decreases, creating resilience capacity before a storm hits.">
+    <img src="./Images/islandnot.png" alt="Battery Charging UI">
+  </div>
 
-     <div class="scroll-item" data-heading="Generated Invoice in App"
-          data-text="The system generates debit notes automatically, including calculated overcharge amounts, supplier details, and invoice references.
-          Each debit note is exported directly as a PDF for official documentation and submission.<br>
-          <span class='notice'>Impact:</span> Streamlines recovery, improves accuracy, and maintains audit-ready records.">
-          <img src="./Images/adebinote.png" alt="Debit Note view">
-    </div>
+  <!-- STEP 4: ONSET OF OUTAGE -->
+  <div class="scroll-item" 
+       data-heading="Step 4: Outage Detection & Autonomous Island Mode"
+       data-text="When ISOLDE detects an outage window (e.g., 02:00–08:00 during Storm Éowyn), the system automatically switches to island mode.
+       The battery becomes the sole energy source, distributing power intelligently across predefined critical stations.<br><br>
+       The UI displays:
+       <br>• Battery depletion in real time  
+       <br>• Stations actively being powered  
+       <br>• Amount of energy allocated to each area<br><span class='notice'>Goal:</span> Demonstrate how stored energy can extend grid resilience and prioritize essential infrastructure.">
+    <img src="./Images/islandmode.png" alt="Debit Note">
+  </div>
 
 
       <!-- <div class="scroll-item" data-heading="PDF Version of Debit Note"
@@ -119,18 +143,35 @@
   </div>
 
   <div class="next-project hidden">
-        <a href="./hotelops.html">Got to HotelOps →</a>
+        <a href="./hotelops.html">Got to Debit Note →</a>
   </div>
 
 
-  <div class="scroll-item impact">
-        <div class="impact-metrics">
-          <h2>Results & Impact</h2>
-          <div class="metric"><span>120+</span> hours saved per month</div>
-          <div class="metric"><span>₦2,000,000</span> in overcharges recovered</div>
-          <div class="metric"><span>100%</span> accountability in supplier billing</div>
-        </div>
-      </div>
+    <div class="scroll-item impact">
+  <div class="impact-metrics">
+    <h2>Results & Impact</h2>
+    <div class="metric">
+      <span>Hours</span> of sustained supply during simulated outage
+    </div>
+
+    <div class="metric">
+      <span>100%</span> autonomous switch-over to island mode
+    </div>
+
+    <div class="metric">
+      <span>Real-time</span> allocation of power to critical stations
+    </div>
+
+    <div class="metric">
+      <span>Forecast-driven</span> optimization using Prophet models
+    </div>
+
+    <div class="metric">
+      <span>0 manual intervention</span> required during storm simulation
+    </div>
+
+  </div>
+</div>
 </section>
 </main>
 
