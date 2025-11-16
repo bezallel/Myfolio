@@ -224,14 +224,3 @@ document.querySelectorAll("a[href]").forEach(link => {
     }, 200); // match transition duration
   });
 });
-
-
-document.getElementById('download-excel').addEventListener('click', function(e) {
-  e.preventDefault();
-  const link = document.createElement('a');
-  link.href = 'medequip.xlsx';      // file in same folder
-  link.download = 'medequip.xlsx';  // suggested filename
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-});
