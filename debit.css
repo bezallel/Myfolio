@@ -634,3 +634,15 @@ main {
 }
 
 
+@media (max-height: 450px) {
+
+
+.case-title {
+  font-size: clamp(1.6rem, 6vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-top: -6rem !important;
+}
+
+}
+
