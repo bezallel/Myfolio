@@ -235,7 +235,6 @@ h1, h2 {
 
 
 
-
 /* Main content */
 main {
   margin-left: 220px;
@@ -434,9 +433,6 @@ main {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
-
-
-
 
 .footer {
     position: fixed;
@@ -639,3 +635,14 @@ main {
 
 
 
+@media (max-height: 450px) {
+
+
+.case-title {
+  font-size: clamp(1.6rem, 6vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-top: -5rem !important;
+}
+
+}
