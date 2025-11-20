@@ -81,55 +81,51 @@
 <div class="sticky-scroll">
 
   <!-- PROBLEM -->
+
   <div class="scroll-item" 
        data-heading="Problem: Extreme Grid Vulnerability"
-       data-text="Storm Éowyn caused severe, widespread outages across Ireland, leaving hundreds of thousands without electricity. 
-       The event exposed how fragile distribution networks become during climate-intensified storms.<br><br>
-       <span class='notice'>Objective:</span> Create a real-time simulation tool that models how stored energy can be accumulated during off-peak hours and redistributed to critical areas when the grid fails—demonstrating a proof-of-concept micro-grid resilience system.">
+       data-text="Storm Éowyn caused widespread outages in Ireland, exposing the fragility of the grid.<br>
+       <span class='notice'>Objective:</span> Build a real-time simulation showing how stored energy can charge during off-peak hours and be redistributed to critical areas during outages.">
     <img src="./Images/eowyn.jpg" alt="Storm Eowyn Damage">
   </div>
 
   <!-- STEP 1: MODELING LOAD + FORECASTING -->
+
   <div class="scroll-item" 
-       data-heading="Step 1: Forecasting and Load Modeling"
-       data-text="The system begins by modeling electricity demand using historical load data. 
-       A Prophet forecasting model is trained to understand daily and weekly patterns, allowing ISOLDE to estimate future consumption and identify high-demand periods.<br><br>
-       During these peaks, a portion of the load is classified as 'flexible' and safely shifted; creating predictable opportunities for controlled battery charging.">
+       data-heading="Step 1: Forecasting & Load Modeling"
+       data-text="ISOLDE models electricity demand using historical data and forecasts peaks with a Prophet model. Flexible loads are shifted to off-peak periods, creating controlled battery charging opportunities.">
     <img src="./Images/code.png" alt="Forecasting and Load Model">
   </div>
 
-  <!-- STEP 2: THE CODE (BATTERY + STORM SIMULATION) -->
+  <!-- STEP 2: BATTERY + STORM SIMULATION -->
+
   <div class="scroll-item" 
-       data-heading="Step 2: Battery Charging and Storm Simulation"
-       data-text="ISOLDE simulates how a community battery behaves before, during, and after a storm. 
-       Stored energy builds during low-demand hours. When an outage window is detected, the battery switches into island mode and begins powering the system.">
+       data-heading="Step 2: Battery & Storm Simulation"
+       data-text="The system simulates battery behavior before, during, and after storms. Energy accumulates during low-demand periods. During outages, the battery switches to island mode to power essential loads.">
     <img src="./Images/isbat.png" alt="Storm Simulation Code">
   </div>
 
-  <!-- STEP 3: UI — CHARGING PHASE -->
+  <!-- STEP 3: REAL-TIME CHARGING UI -->
+
   <div class="scroll-item" 
-       data-heading="Step 3: Real-Time Charging & Load Distribution Interface"
-       data-text="The interface visualizes multiple layers of the system in real time:
-       <br>• Original load - Total electricity demand at the moment  
-       <br>• Flexible load - Portion of electricity that can be shifted to off-peak times  
-       <br>• Served load during demand  
-       <br>• Battery state-of-charge, growing during off-peak periods<br><br>
-       Users can observe energy storage accumulating as demand decreases, creating resilience capacity before a storm hits.">
-    <img src="./Images/islandnot.png" alt="Battery Charging UI">
+       data-heading="Step 3: Charging & Load Interface"
+       data-text="The interface shows in real time:  
+       <br>• Original load – total demand  
+       <br>• Flexible load – shiftable portion  
+
+   <br> Users can watch energy build before storms, preparing the system for outages.">
+<img src="./Images/islandnot.png" alt="Battery Charging UI">
+
+
   </div>
 
-  <!-- STEP 4: ONSET OF OUTAGE -->
+  <!-- STEP 4: OUTAGE DETECTION -->
+
   <div class="scroll-item" 
-       data-heading="Step 4: Outage Detection & Autonomous Island Mode"
-       data-text="When ISOLDE detects an outage window (e.g., 02:00–08:00 during Storm Éowyn), the system automatically switches to island mode.
-       The battery becomes the sole energy source, distributing power intelligently across predefined critical stations.<br><br>
-       The UI displays:
-       <br>• Battery depletion in real time  
-       <br>• Stations actively being powered  
-       <br>• Amount of energy allocated to each area<br><span class='notice'>Goal:</span> Demonstrate how stored energy can extend grid resilience and prioritize essential infrastructure.">
+       data-heading="Step 4: Outage & Island Mode"
+       data-text="When an outage is detected, ISOLDE switches to island mode. The battery powers critical stations, and the UI shows real-time battery depletion, active stations, and energy allocation.<br><span class='notice'>Goal:</span> Extend grid resilience and prioritize essential infrastructure.">
     <img src="./Images/islandmode.png" alt="Debit Note">
   </div>
-
 
       <!-- <div class="scroll-item" data-heading="PDF Version of Debit Note"
            data-text="Finally, debit notes can be exported as PDFs, ready to print or send via email to suppliers. This closes the loop from data discovery to supplier communication.">
