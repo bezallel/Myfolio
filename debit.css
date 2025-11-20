@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+/* General styles */
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
@@ -9,12 +10,13 @@ body {
   transition: opacity 3s ease;
 }
 
-
+/* Reveal */
 body.fade-in {
   opacity: 1;
 }
 
 
+/* Side nav */
 .side-nav {
     position: fixed;
     top: 0;
@@ -32,15 +34,17 @@ body.fade-in {
     padding: 0;
 }
 
+/* Parent active highlight */
 .side-nav > ul > li > a.active-parent {
     color: #ff4081 !important;
     font-weight: 600 !important;
 }
 
 
+/* Sub-nav indentation */
 .side-nav ul li ul.sub-nav {
     list-style: none;
-    padding-left: 1.5rem; 
+    padding-left: 1.5rem; /* indent */
     margin-top: 0.5rem;
 }
 
@@ -55,9 +59,9 @@ body.fade-in {
     transition: color 0.3s, font-weight 0.3s;
 }
 
-
+/* Accent color highlight for active section */
 .side-nav ul li ul.sub-nav li a.active {
-    color: #ff6f61;
+    color: #ff6f61; /* complementary accent color */
     font-weight: 600;
 }
 
@@ -85,20 +89,21 @@ body.fade-in {
 
 .side-nav li.active {
     color: #ff4081;
-    pointer-events: none; 
+    pointer-events: none; /* Prevent clicking the current page */
 }
 
 
 
 
 
+/* Headings */
 h1, h2 {
     margin: 0 0 1rem 0;
     font-family: 'Cinzel', serif;
     color: #ffffff;
 }
 
-
+/* Project Overview */
 .project-overview {
     max-width: 1100px;
     margin: 0 auto;
@@ -119,7 +124,7 @@ h1, h2 {
     color: #ffffff;
 }
 
-
+/* Metadata list */
 .project-meta {
     list-style: none;
     padding: 0;
@@ -136,7 +141,7 @@ h1, h2 {
 
 .project-description .disclaimer {
   font-size: 0.9rem;
-  color: #605656 !important; 
+  color: #605656 !important; /* subtle informational blue */
   margin-top: 1rem;
   line-height: 1.4;
 }
@@ -150,7 +155,7 @@ h1, h2 {
 }
 
 .project-download strong {
-  color: #ff0000; 
+  color: #ff0000; /* strong red */
 }
 
 
@@ -182,6 +187,8 @@ h1, h2 {
 
 
 
+
+/* Video styling */
 .app-video {
     width: 90%;
     border-radius: 10px;
@@ -198,6 +205,7 @@ h1, h2 {
   
 }
 
+/* Visit button */
 .visit-btn {
     display: inline-block;
     padding: 0.6rem 1.2rem;
@@ -213,18 +221,21 @@ h1, h2 {
     background: #ff1f70;
 }
 .visit-btn + .demo-note {
-  display: inline-block;       
+  display: inline-block;       /* keeps it tied to the button but wraps if needed */
   margin-left: 0.1rem;
   font-size: 0.9rem;
   color: #ff0000;
   font-weight: 600;
-  vertical-align: middle;    
+  vertical-align: middle;      /* aligns vertically with button */
 }
 
 
 
 
 
+
+
+/* Main content */
 main {
   margin-left: 220px;
   padding: 2rem;
@@ -235,6 +246,7 @@ main {
 
 
 
+/* Case Study */
 .project-case-study {
   margin-top: 4rem;
 }
@@ -243,22 +255,22 @@ main {
   padding: 2rem 1rem;
   display: flex;
   max-width: 1100px;
-  gap: 3rem; 
+  gap: 3rem; /* more breathing space between text and images */
   align-items: flex-start;
 }
 
-
+/* Sticky text panel (desktop) */
 .sticky-explanation {
-  flex: 1 1 50%; 
+  flex: 1 1 50%; /* take ~40% of width */
   position: sticky;
   top: 0;
-  height: 100vh; 
+  height: 100vh; /* full viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 2rem;
+  padding-top: 2rem; /* leave space for case-title */
   box-sizing: border-box;
-  max-width: 500px; 
+  max-width: 500px; /* prevent text from being too wide */
 }
 
 .sticky-explanation h1 {
@@ -275,20 +287,20 @@ main {
   left: 0;
 }
 
-
+/* Sticky scroll */
 .sticky-scroll {
-  flex: 1 1 50%;
+  flex: 1 1 50%; /* take ~60% of width */
   display: flex;
   flex-direction: column;
   gap: 2rem;
   position: relative;
-  max-width: 700px; 
+  max-width: 700px; /* hard cap image column width */
   margin-left: 0%;
 }
 
-
+/* Individual scroll items */
 .scroll-item {
-  min-height: 100vh; 
+  min-height: 100vh; /* ensures each image fills viewport space */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,24 +310,24 @@ main {
 
 .scroll-item.active {
   opacity: 1;
-  transform: scale(1.03); 
+  transform: scale(1.03); /* subtle focus effect */
 }
 
 
 .scroll-item img,
 .scroll-item video {
-  max-height: 70vh;
+  max-height: 70vh; /* consistent image scale */
   max-width: 100%;
   border-radius: 12px;
   object-fit: contain;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* subtle elevation */
 }
 
-
+/* Ensure heading and paragraph are centered below title */
 .sticky-explanation h2 {
   text-align: left;
   max-width: 600px;
-  margin: 1rem 0;  
+  margin: 1rem 0;   /* top & bottom only */
   color: #ff1f70;
   font-size: 1.7rem;
   font-weight: 700;
@@ -323,7 +335,7 @@ main {
 
 .sticky-explanation p {
   font-size: 1rem;
-  line-height: 1.7; 
+  line-height: 1.7; /* more readable */
   color: #ddd;
   margin-bottom: 2rem;
   text-align: left;
@@ -334,13 +346,14 @@ main {
 
 
 .notice {
-  font-weight: 700;         
-  color: #ff6f61;            
-  font-size: 1.05rem;        
+  font-weight: 700;          /* makes it bold */
+  color: #ff6f61;            /* soft orange (adjust as desired) */
+  font-size: 1.05rem;        /* slightly larger for emphasis */
 }
 
 
 
+/* Fade animation */
 .fade {
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -350,9 +363,9 @@ main {
   opacity: 1;
 }
 
-
+/* Final Impact Section */
 .scroll-item.impact {
-  background: #0a0a0a; 
+  background: #0a0a0a; /* clean dark background */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -367,7 +380,7 @@ main {
 .impact-metrics h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #ff4081; 
+  color: #ff4081; /* brand highlight */
   margin-bottom: 2rem;
 }
 
@@ -393,7 +406,7 @@ main {
   right: 2rem;
   z-index: 20;
   opacity: 0;
-  pointer-events: none;
+  pointer-events: none; /* avoid ghost clicks */
   transition: opacity 0.5s ease;
 }
 
@@ -403,7 +416,7 @@ main {
 }
 
 .next-project a {
-  background: #ff1f70; 
+  background: #ff1f70; /* standout accent */
   color: #fff;
   padding: 0.8rem 1.5rem;
   border-radius: 50px;
@@ -421,9 +434,6 @@ main {
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
-
-
-
 .footer {
     position: fixed;
     bottom: 0;
@@ -439,7 +449,7 @@ main {
 
 .footer p {
     margin: 0;
-    font-size: 0.875rem; 
+    font-size: 0.875rem; /* Adjust font size for readability */
 }
 
 .menu-toggle {
@@ -461,6 +471,7 @@ main {
 
 
 
+/* Mobile responsive nav */
 @media (max-width: 767px) {
 
 .menu-toggle-bar {
@@ -468,20 +479,20 @@ main {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 65px;         
+    height: 65px;          /* matches icon height */
     background-color: #000;
-    z-index: 999;         
+    z-index: 2000;          /* below icon */
   }
 
-
+  /* Menu icon above the black bar */
   .menu-toggle {
-    cursor: Pointer;  
+    cursor: pointer;
     position: fixed;
     top:1rem; 
     left: 15px;
     font-size: 6vw;
     padding: 0.2em 0.4em;
-    z-index: 3000;        
+   z-index: 3000;      /* higher than bar so icon appears on top */
     display: block;
   }
 
@@ -515,7 +526,7 @@ main {
     display: none; 
   }
 
-
+  /* ensure normal document flow and stacking */
   .sticky-container { display: block; }
   .sticky-scroll { display: block; }
 
@@ -525,7 +536,7 @@ main {
     align-items: stretch;
     gap: 0.375rem;
     padding: 0.5rem 0;
-    position: relative; 
+    position: relative; /* neutralize absolute children */
   }
 
   .scroll-item .mobile-heading {
@@ -533,7 +544,7 @@ main {
   text-align: center;
   font-weight: 700;
   color: #ff1f70;
-  font-size: clamp(1.4rem, 5vw, 1.9rem); 
+  font-size: clamp(1.4rem, 5vw, 1.9rem); /* scales nicely on phones */
   line-height: 1.3;
 }
 
@@ -541,10 +552,11 @@ main {
     margin: 0 0 0.75rem;
     text-align: center;
     line-height: 1.5;
-    color: #666;
+    color: #666; /* adjust if background is dark */
     font-size: 0.95rem;
   }
 
+  /* force images/videos into the normal flow (important if other CSS used absolute) */
   .scroll-item img,
   .scroll-item video {
     position: static !important;
@@ -568,9 +580,9 @@ main {
   }
 
   .notice {
-  font-weight: 700;          
-  color: #ff6f61;           
-  font-size: 1.05rem;        
+  font-weight: 700;          /* makes it bold */
+  color: #ff6f61;            /* soft orange (adjust as desired) */
+  font-size: 1.05rem;        /* slightly larger for emphasis */
 }
 
 .project-description .disclaimer {
@@ -580,7 +592,7 @@ main {
 .sticky-explanation .case-title {
   font-size: clamp(1.6rem, 6vw, 2rem);
   font-weight: 700;
-  color: #ff1f70; 
+  color: #ff1f70; /* visible pink accent matching headings */
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -600,20 +612,20 @@ main {
 
  .footer {
     display: flex;
-    justify-content: center; 
-    align-items: center;    
-    padding: 8px;            
+    justify-content: center; /* centers horizontally */
+    align-items: center;     /* centers vertically within padding */
+    padding: 8px;            /* balanced, no side-offset */
     text-align: center;
   }
 
   .footer p {
-    font-size: clamp(0.6rem, 2.5vw, 0.8rem);
+    font-size: clamp(0.6rem, 2.5vw, 0.8rem); /* scales with screen */
     margin: 0;
     line-height: 1.4;
   }
 
   .scroll-item .mobile-text {
-    color: #fff;      
+    color: #fff;       /* white */
     text-align: center;
     line-height: 1.6;
     margin-bottom: 1rem;
