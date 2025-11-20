@@ -639,10 +639,24 @@ main {
 
 
 .case-title {
-  font-size: clamp(1.6rem, 6vw, 1.5rem);
+  /* font-size: clamp(1.6rem, 6vw, 1.5rem);
   font-weight: 700;
   text-align: center;
-  margin-top: -5rem !important;
+  margin-top: -6rem !important; */
+  display: none;
+}
+
+.impact-metrics .metric {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 500;
+  color: #eee;
+  margin: 1rem 0;
+}
+
+.impact-metrics .metric span {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 }
